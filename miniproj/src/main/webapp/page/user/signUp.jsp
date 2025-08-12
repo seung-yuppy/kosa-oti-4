@@ -6,6 +6,7 @@
   <title>회원가입</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       background-color: #f8f4f0;
@@ -65,7 +66,7 @@
   </style>
 </head>
 <body>
-
+<%@ include file="../../component/header.jsp" %>
 <div class="form-container">
   <h2>회원가입</h2>
   <form action="signupProcess.jsp" method="post">
@@ -114,6 +115,7 @@
 
   </form>
 </div>
+<%@ include file="../../component/footer.jsp" %>
 
 <!-- 다음 주소 API 관련 요소 -->
 <div id="layer">

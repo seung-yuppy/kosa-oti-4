@@ -4,14 +4,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../resource/css/bootstrap.min.css" rel="stylesheet">
-<link href="../resource/css/common.css" rel="stylesheet">
+<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+<link href="/miniproj/resource/css/common.css" rel="stylesheet">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">
-			<img src="../image/pawIcon.png" alt="logo" style="width: 40px; height: 40px;" /> 
-			<a class="nav-link text-brown" href="/miniproj/page/home.jsp" style="color: #a75d00; text-decoration: none;">운명의 발바닥</a>
+			<img src="/miniproj/image/pawIcon.png" alt="logo" style="width: 40px; height: 40px;" /> 
+			<a class="nav-link text-brown" href="/miniproj/page/home.jsp" id="header-title">운명의 발바닥</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarNav">
 				<span class="navbar-toggler-icon"></span>
@@ -30,7 +30,7 @@
 					<li class="nav-item"><a class="nav-link btn btn-border-brown" href="#"
 						style="border: 1px solid #a75d00; color: #a75d00; background-color: transparent;">로그인</a></li>
 					<li class="nav-item"><a class="nav-link btn btn-brown"
-						style="background-color: #a75d00; color: white;" href="#">회원가입</a></li>
+						style="background-color: #a75d00; color: white;" href="/miniproj/page/user/signUp.jsp">회원가입</a></li>
 				</ul>
 			</div>
 		</div>

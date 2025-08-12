@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>운명의 발바닥</title>
-	<link href="../resource/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../resource/css/common.css" rel="stylesheet">
+	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
 	<style>
 			body {
 				background-color: white;
@@ -41,7 +41,7 @@
 			
 			.text-brown {
 				color: #a75d00;
-				text-decoration: none;
+				text-decoration: none; 
 			}
 	</style>
 </head>
@@ -61,7 +61,7 @@
 
 	<!-- 나랑 잘 맞는 유기동물 -->
 	<div class="container my-5">
-		<h4 class="section-title">나랑 잘 맞는 유기동물</h4>
+		<h4 class="section-title">귀여운 유기동물들</h4>
 		<div class="row g-4" style="justify-content: center;">
 			<%-- 샘플 카드 --%>
 			<%
@@ -75,14 +75,14 @@
 					<div class="card-body" style="padding: 1rem; border: 1px solid #a75d00">
 						<h5 class="card-title fw-bold">믹스견</h5>
 						<p class="card-text text-muted">4개월,접종(종합백신/코로나장염/광견병),데피니트,구충제,스팟라인</p>
-						<ul style="display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 0; row-gap: 5px;">
-							<li style="display:flex; align-items: center; gap: 4px; font-size: 10px;">
+						<ul style="display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 0; row-gap: 5px; column-gap: 2px;">
+							<li style="display:flex; align-items: center; gap: 3px; font-size: 10px;"><img src="../image/ico_mbti.png" style="width:15px; height:15px; object-fit: contain;" /><span>MBTI : ISTP</span></li>	
+							<li style="display:flex; align-items: center; gap: 2px; font-size: 10px;"><img src="../image/ico_gender.png" style="width:15px; height:15px; object-fit: contain;" /><span>성별 : 수컷</span></li>	
+							<li style="display:flex; align-items: center; gap: 3px; font-size: 10px;"><img src="../image/ico_location.png" style="width:15px; height:15px; object-fit: contain;" /><span>경남 성남시</span></li>	
+							<li style="display:flex; align-items: center; gap: 3px; font-size: 10px;">
 								<img src="../image/ico_age.png" style="width:15px; height:15px; object-fit: contain;" />
 								<span>나이 : 1세</span>
 							</li>	
-							<li style="display:flex; align-items: center; gap: 4px; font-size: 10px;"><img src="../image/ico_mbti.png" style="width:15px; height:15px; object-fit: contain;" /><span>MBTI : ISTP</span></li>	
-							<li style="display:flex; align-items: center; gap: 4px; font-size: 10px;"><img src="../image/ico_gender.png" style="width:15px; height:15px; object-fit: contain;" /><span>성별 : 수컷</span></li>	
-							<li style="display:flex; align-items: center; gap: 4px; font-size: 10px;"><img src="../image/ico_location.png" style="width:15px; height:15px; object-fit: contain;" /><span>경남 성남시</span></li>	
 						</ul>
 						<a href="#" class="btn text-white" style="background-color: #a75d00; color: white; display: block">자세히 보기</a>
 					</div>
@@ -96,7 +96,7 @@
 
 	<!-- 커뮤니티 활동 -->
 	<div class="container my-5">
-		<h4 class="section-title">커뮤니티 활동 둘러보기</h4>
+		<h4 class="section-title">커뮤니티 둘러보기</h4>
 		<div class="row g-4">
 			<div class="col-md-4">
 				<div class="card shadow-sm">
