@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.btn-brown {
+	background-color: #a75d00;
+	color: white;
+}
+
+.btn-border-brown {
+	border: 1px solid #a75d00;
+	color: #a75d00;
+	background-color: transparent;
+}
+
+.text-brown {
+	color: #a75d00;
+	text-decoration: none;
+}

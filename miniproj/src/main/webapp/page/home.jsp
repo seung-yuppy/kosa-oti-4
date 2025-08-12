@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>운명의 발바닥</title>
-<!-- Bootstrap CSS -->
 <link href="../resource/css/bootstrap.min.css" rel="stylesheet">
+<link href="../resource/css/common.css" rel="stylesheet">
 <style>
 	body {
 		background-color: white;
@@ -31,10 +30,13 @@
 	
 	.btn-brown {
 		background-color: #a75d00;
+		color: white;
 	}
 	
 	.btn-border-brown {
 		border: 1px solid #a75d00;
+		color: #a75d00;
+		background-color: transparent;
 	}
 	
 	.text-brown {
