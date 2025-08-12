@@ -11,7 +11,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">
 			<img src="../image/pawIcon.png" alt="logo" style="width: 40px; height: 40px;" /> 
-			<a class="nav-link text-brown" href="#" style="color: #a75d00; text-decoration: none;">운명의 발바닥</a>
+			<a class="nav-link text-brown" href="/miniproj/page/home.jsp" style="color: #a75d00; text-decoration: none;">운명의 발바닥</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarNav">
 				<span class="navbar-toggler-icon"></span>
