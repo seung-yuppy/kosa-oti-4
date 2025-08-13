@@ -71,8 +71,6 @@ body {
 	color: gray;
 	border: 1px solid #8B5E3C !important;
 }
-
-
 </style>
 <!-- Bootstrap 5 -->
 <link
@@ -81,73 +79,74 @@ body {
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body class="container my-5">
+<body>
 	<%@ include file="../../component/header.jsp"%>
-	<!-- 프로필 정보 -->
-	<div class="section">
-		<h3>프로필 정보</h3>
-
-		<div class="mb-3">
-			<label class="form-label">이름</label>
-			<div class="card">
-				<div class="card-body"><%= name %></div>
+	<div class="container my-5">
+		<!-- 프로필 정보 -->
+		<div class="section">
+			<h3>프로필 정보</h3>
+			<hr>
+			<div class="mb-3">
+				<label class="form-label">이름</label>
+				<div class="card">
+					<div class="card-body"><%= name %></div>
+				</div>
 			</div>
+
+			<div class="mb-3">
+				<label class="form-label">주소</label>
+				<div class="card">
+					<div class="card-body"><%= address %></div>
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">닉네임</label>
+				<div class="card">
+					<div class="card-body"><%= nickname %></div>
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label d-block">반려동물 소유 여부</label>
+				<div class="card">
+					<div class="card-body"><%= hasPet ? "예" : "아니요" %></div>
+				</div>
+			</div>
+
+			<!-- 수정 버튼 -->
+			<button type="button" class="btn" data-bs-toggle="modal"
+				data-bs-target="#editProfileModal" id="brown-btn">프로필 수정</button>
 		</div>
 
-		<div class="mb-3">
-			<label class="form-label">주소</label>
-			<div class="card">
-				<div class="card-body"><%= address %></div>
-			</div>
-		</div>
 
-		<div class="mb-3">
-			<label class="form-label">닉네임</label>
-			<div class="card">
-				<div class="card-body"><%= nickname %></div>
-			</div>
-		</div>
-
-		<div class="mb-3">
-			<label class="form-label d-block">반려동물 소유 여부</label>
-			<div class="card">
-				<div class="card-body"><%= hasPet ? "예" : "아니요" %></div>
-			</div>
-		</div>
-
-		<!-- 수정 버튼 -->
-		<button type="button" class="btn" data-bs-toggle="modal"
-			data-bs-target="#editProfileModal" id="brown-btn">프로필 수정</button>
-	</div>
-
-
-	<!-- 관심 입양 동물 -->
-	<div class="section">
-		<h3>내가 관심 있는 입양 동물</h3>
-		<div class="row row-cols-1 row-cols-md-4 g-4 mt-3" id="animal-list">
-			<% for (int i = 0; i < animals.size(); i++) {
+		<!-- 관심 입양 동물 -->
+		<div class="section">
+			<h3>내가 관심 있는 입양 동물</h3>
+			<div class="row row-cols-1 row-cols-md-4 g-4 mt-3" id="animal-list">
+				<% for (int i = 0; i < animals.size(); i++) {
         Animal a = animals.get(i);
         boolean isHidden = i >= 4; // 5번째부터 숨김
     %>
-			<div class="col animal-card <%= isHidden ? "more-card" : "" %>"
-				style="<%= isHidden ? "display: none;" : "" %>">
-				<div class="card h-100">
-					<img src="<%= a.image %>" class="card-img-top" alt="<%= a.name %>">
-					<div class="card-body">
-						<h5 class="card-title"><%= a.name %></h5>
-						<p class="card-text"><%= a.type %></p>
-						<a href="#" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+				<div class="col animal-card <%= isHidden ? "more-card" : "" %>"
+					style="<%= isHidden ? "display: none;" : "" %>">
+					<div class="card h-100">
+						<img src="<%= a.image %>" class="card-img-top" alt="<%= a.name %>">
+						<div class="card-body">
+							<h5 class="card-title"><%= a.name %></h5>
+							<p class="card-text"><%= a.type %></p>
+							<a href="#" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
+						</div>
 					</div>
 				</div>
+				<% } %>
 			</div>
-			<% } %>
 		</div>
-	</div>
-<div class="text-center mt-3">
-    <button class="btn btn-outline-secondary" id="toggle-btn">더보기</button>
-</div>
+		<div class="text-center mt-3">
+			<button class="btn btn-outline-secondary" id="toggle-btn">더보기</button>
+		</div>
 
-<script>
+		<script>
     document.getElementById("toggle-btn").addEventListener("click", function () {
         const hiddenCards = document.querySelectorAll(".more-card");
         const isHidden = hiddenCards[0].style.display === "none";
@@ -161,7 +160,7 @@ body {
 </script>
 
 
-	<!-- 커뮤니티 활동 (탭 전환) -->
+		<!-- 커뮤니티 활동 (탭 전환) -->
 		<div class="section">
 			<h3 class="mb-3">내 커뮤니티 활동</h3>
 
@@ -212,6 +211,7 @@ body {
 				</div>
 			</div>
 		</div>
-		<%@ include file="../../component/footer.jsp"%>
+	</div>
+	<%@ include file="../../component/footer.jsp"%>
 </body>
 </html>
