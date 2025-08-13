@@ -5,7 +5,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link href="../resource/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/miniproj/resource/js/bootstrap.bundle.min.js" rel="stylesheet">
+	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
 </head>
 <body>
 	<footer class="bg-light py-3 mt-5 text-center">
