@@ -8,62 +8,63 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body {
-      background-color: #f8f4f0;
-    }
+body {
+	background-color: #f8f4f0;
+}
 
-    .form-container {
-      max-width: 550px;
-      margin: 50px auto;
-      background-color: #fff9f5;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
+.form-container {
+	max-width: 550px;
+	margin: 50px auto;
+	background-color: #fff9f5;
+	padding: 30px;
+	border-radius: 12px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
 
-    .btn-brown {
-      background-color: #8B5E3C;
-      color: white;
-    }
+.btn-brown {
+	background-color: #a75d00;
+	color: white;
+}
 
-    .btn-brown:hover {
-      background-color: #6f442e;
-    }
+.form-label, .form-check-label {
+	color: #a75d00;
+}
 
-    .form-label, .form-check-label {
-      color: #5b3a29;
-    }
+h2 {
+	color: #a75d00;
+	text-align: center;
+	margin-bottom: 30px;
+}
 
-    h2 {
-      color: #5b3a29;
-      text-align: center;
-      margin-bottom: 30px;
-    }
+.form-control:focus {
+	border-color: #8B5E3C;
+	box-shadow: 0 0 0 0.2rem rgba(139, 94, 60, 0.25);
+}
 
-    .form-control:focus {
-      border-color: #8B5E3C;
-      box-shadow: 0 0 0 0.2rem rgba(139, 94, 60, 0.25);
-    }
+#signUp {
+	background-color: #a75d00;
+	color: white;
+}
 
-    #layer {
-      display:none;
-      position:fixed;
-      overflow:hidden;
-      z-index:1000;
-      -webkit-overflow-scrolling:touch;
-      background: white;
-      border: 2px solid #8B5E3C;
-      border-radius: 8px;
-    }
+#layer {
+	display: none;
+	position: fixed;
+	overflow: hidden;
+	z-index: 1000;
+	-webkit-overflow-scrolling: touch;
+	background: white;
+	border: 2px solid #8B5E3C;
+	border-radius: 8px;
+}
 
-    #btnCloseLayer {
-      cursor: pointer;
-      position: absolute;
-      right: -3px;
-      top: -3px;
-      z-index: 1;
-    }
-  </style>
+#btnCloseLayer {
+	cursor: pointer;
+	position: absolute;
+	right: -3px;
+	top: -3px;
+	z-index: 1;
+}
+</style>
 </head>
 <body>
 <%@ include file="../../component/header.jsp" %>
@@ -110,7 +111,7 @@
     </div>
 
     <div class="d-grid">
-      <button type="submit" class="btn btn-brown">회원가입</button>
+      <button type="submit" class="btn" id="signUp">회원가입</button>
     </div>
 
   </form>
