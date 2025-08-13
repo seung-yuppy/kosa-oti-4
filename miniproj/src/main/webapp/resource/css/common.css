@@ -1,16 +1,96 @@
 @charset "UTF-8";
 
-#header-title {
-	color:#a75d00;
-	font-weight: bold;
-	transition: color 0.5s;
+/* 유틸리티 */
+/* 글자 색  */
+.text-brown {
+	color: #a75d00 !important; 
+}
+
+/* 디스플레이 */
+.d-block {
+	display: block;
+}
+
+/* 버튼 컴포넌트 */
+.btn-container {
+	display: flex !important; 
+	gap: 50px !important; 
+	justify-content: center !important;
+}
+
+.btn-brown {
+	background-color: #a75d00 !important;
+   	color: white !important; 
+	transition: background-color !important;
 	
 	&:hover {
-		color: #cc7000; 
+   		background-color: #cc7000 !important;
 	}
 }
 
-#hero-section {
+.btn-secondary-brown {
+	border: 1px solid #a75d00 !important; 
+	color: #a75d00 !important; 
+	background-color: transparent !important;
+}
+
+/* 카드 컴포넌트 */
+.card-image {
+	height: 200px !important;
+	border: 1px solid #a75d00 !important; 
+}
+
+.card-border {
+	border: 1px solid #a75d00 !important;
+}
+
+.card-list {
+	display: grid !important;
+	grid-template-columns: 1fr 1fr !important; 
+	padding: 0 !important; 
+	row-gap: 5px !important; 
+	column-gap: 2px !important;
+}
+
+.card-item {
+	display: flex !important; 
+	align-items: center !important;
+	gap: 3px !important; 
+	font-size: 14px !important;
+}
+
+.card-icon {
+	width: 15px !important; 
+	height: 15px !important; 
+	object-fit: contain !important;
+}
+
+/* 헤더 컴포넌트 */
+.gnb-title {
+	color: #a75d00 !important;
+	font-weight: bold !important;
+	transition: color 0.5s !important;
+	
+	&:hover {
+		color: #cc7000 !important; 
+	}
+}
+
+.gnb-item {
+	color: #a75d00 !important;
+	
+	&:hover {
+		color: #cc7000 !important;
+	}
+}
+
+.gnb-logo {
+	width: 40px !important; 
+	height: 40px !important;
+}
+
+/* 홈 페이지  */
+.hero-section {
 	background-color: #fff4e6;
 	padding: 3rem 1rem;
 	text-align: center;
@@ -18,102 +98,6 @@
 	border: 1px solid #a75d00;
 }
 
-#card-body {
-	padding: 1rem; 
-	border: 1px solid #a75d00;
-}
-
-#pet-list {
-	display: grid;
-	grid-template-columns: 1fr 1fr; 
-	padding: 0; 
-	row-gap: 5px; 
-	column-gap: 2px;
-}
-
-#pet-item {
-	display:flex; 
-	align-items: center;
-	gap: 3px; 
-	font-size: 14px;
-}
-
-#pet-icon {
-	width:15px; 
-	height:15px; 
-	object-fit: contain;
-}
-
-#card-img-top {
-	height: 300px;
-}
-
-#card-img {
-	height: 200px;
-}
-
-#btn-container {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-
-#border-btn {
-	border: 1px solid #a75d00; 
-	color: #a75d00; 
-	background-color: transparent;
-	transition: background-color, color, border 0.3s;
-	
-	&:hover {
-		background-color: #cc7000; 
-		color: white;
-	}
-}
-
-#main-btn {
-   	background-color: #a75d00;
-   	color: white;
-	transition: background-color, color, border 0.3s;
-	
-	&:hover {
-   		background-color: #cc7000;
-	}
-}
-
-#main-border {
-	border: 1px solid #a75d00;
-	border-radius: 8px;
-}
-
-.nav-link {
-	
-	&:focus {
-		box-shadow: none !important;
-	}
-}
-
-.form-control {
-	border: 1px solid #a75d00 !important;
-	
-	&:focus {
-		box-shadow: none !important;
-	}
-}
-
-.btn {
-	&:focus {
-		box-shadow: none !important;
-	}
-}
-
-#gnb {
-	color: #a75d00;
-	
-	&:hover {
-		color: #cc7000;
-	}
-}
-
-#main-text {
-	color: #a75d00;
+.community-image {
+	height: 300px !important;
 }

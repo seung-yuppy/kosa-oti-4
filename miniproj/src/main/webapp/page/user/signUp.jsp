@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <title>회원가입</title>
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
+	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
   <style>
 body {
 	background-color: #f8f4f0;
@@ -195,6 +196,6 @@ h2 {
         element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
     }
 </script>
-
+<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
