@@ -21,8 +21,13 @@ body {
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.btn-brown {
+.brown-btn {
 	background-color: #a75d00;
+	color: white;
+}
+
+.brown-btn:hover {
+	background-color: #A0522D;
 	color: white;
 }
 
@@ -43,6 +48,11 @@ h2 {
 
 #signUp {
 	background-color: #a75d00;
+	color: white;
+}
+
+#signUp:hover {
+	background-color: #cc7000;
 	color: white;
 }
 
@@ -111,7 +121,7 @@ h2 {
     </div>
 
     <div class="d-grid">
-      <button type="submit" class="btn" id="signUp">회원가입</button>
+      <button type="submit" class="btn brown-btn" id="signUp">회원가입</button>
     </div>
 
   </form>
