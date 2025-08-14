@@ -15,20 +15,20 @@
 		<div class="row g-4">
 			<!-- 필터 선택 영역 -->
 			<aside class="col-lg-3">
-				<div class="filter-card p-3 shadow-sm" id="main-border">
-					<h5 class="fw-bold mb-3" id="main-text">필터</h5>
+				<div class="filter-card p-3 shadow-sm">
+					<h5 class="fw-bold mb-3 text-brown">필터</h5>
 					<form method="GET">
 						<div class="mb-3">
-							<label for="animalType" id="main-text">동물 종류</label> 
-							<select class="form-control" id="animalType" name="animalType">
+							<label for="animalType text-brown">동물 종류</label> 
+							<select class="form-control" name="animalType">
 								<option value="all" selected>전체</option>
 								<option value="dog">강아지</option>
 								<option value="cat">고양이</option>
 							</select>
 						</div>
 						<div class="mb-3">
-							<label for="location" id="main-text">보호소 위치</label> 
-							<select class="form-control" id="location" name="location">
+							<label for="location" class="form-label text-brown">보호소 위치</label> 
+							<select class="form-control" name="location">
 								<option value="all" selected>전체</option>
 								<option value="seoul">서울특별시</option>
 								<option value="gyeonggi">경기도</option>
@@ -38,16 +38,16 @@
 							</select>
 						</div>
 						<div class="mb-3">
-							<label for="gender" class="form-label" id="main-text">성별</label> 
-							<select class="form-control" id="gender" name="gender">
+							<label for="gender" class="form-label text-brown" id="main-text">성별</label> 
+							<select class="form-control" name="gender">
 								<option value="all" selected>전체</option>
 								<option value="male">남자</option>
 								<option value="female">여자</option>
 							</select>
 						</div>
 						<div class="mb-3">
-							<label for="size" class="form-label" id="main-text">사이즈</label> 
-							<select class="form-control" id="size" name="size">
+							<label for="size" class="form-label text-brown">사이즈</label> 
+							<select class="form-control" name="size">
 								<option value="all" selected>전체</option>
 								<option value="small">소</option>
 								<option value="medium">중</option>
@@ -55,8 +55,8 @@
 							</select>
 						</div>
 						<div class="mb-3">
-							<label for="age" class="form-label" id="main-text">나이</label> 
-							<select class="form-control" id="age" name="age">
+							<label for="age" class="form-label text-brown">나이</label> 
+							<select class="form-control" name="age">
 								<option value="all" selected>전체</option>
 								<option value="0-3">0~3세</option>
 								<option value="4-7">4~7세</option>
@@ -64,9 +64,9 @@
 							</select>
 						</div>
 						<hr>
-						<div id="btn-container">
-							<button type="reset" class="btn w-100" id="border-btn">필터 초기화</button>
-							<button type="submit" class="btn w-100" id="main-btn">검색하기</button>
+						<div class="btn-container">
+							<button type="reset" class="btn btn-secondary-brown w-100">필터 초기화</button>
+							<button type="submit" class="btn btn-brown w-100">검색하기</button>
 						</div>
 					</form>
 				</div>
