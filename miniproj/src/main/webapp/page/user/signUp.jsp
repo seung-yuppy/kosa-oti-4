@@ -2,13 +2,15 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>회원가입</title>
-  <!-- Bootstrap CSS -->
-  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
-	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
-  <style>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="/miniproj/resource/css/common.css" rel="stylesheet">
+<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+<style>
 body {
 	background-color: #f8f4f0;
 }
@@ -78,64 +80,81 @@ h2 {
 </style>
 </head>
 <body>
-<%@ include file="../../component/header.jsp" %>
-<div class="form-container">
-  <h2>회원가입</h2>
-  <form action="signupProcess.jsp" method="post">
+	<%@ include file="../../component/header.jsp"%>
+	<div class="form-container">
+		<h2>회원가입</h2>
+		<form action="signupProcess.jsp" method="post">
 
-    <div class="mb-3">
-      <label class="form-label">사용자 이메일</label>
-      <input type="email" name="username" class="form-control" placeholder="사용자 이메일을 입력하세요" required>
-    </div>
+			<div class="mb-3">
+				<label class="form-label">사용자 이메일</label> <input type="email"
+					name="username" class="form-control" placeholder="사용자 이메일을 입력하세요"
+					required>
+				<div class="d-grid">
+					<button type="submit" class="btn btn-brown" id="certificate">인증</button>
+				</div>
+				<input type="text" name="code" class="form-control"
+					placeholder="이메일로 도착한 코드를 입력하세요" required>
 
-    <div class="mb-3">
-      <label class="form-label">비밀번호</label>
-      <input type="password" name="password" class="form-control" placeholder="비밀번호를 입력하세요" required>
-    </div>
+			</div>
 
-    <div class="mb-3">
-      <label class="form-label">닉네임</label>
-      <input type="text" name="nickname" class="form-control" placeholder="사용할 닉네임을 입력하세요" required>
-    </div>
+			<div class="mb-3">
+				<label class="form-label">비밀번호</label> <input type="password"
+					name="password" class="form-control" placeholder="비밀번호를 입력하세요"
+					required>
+			</div>
 
-    <div class="mb-3">
-      <label class="form-label">주소</label>
-      <div class="input-group mb-2">
-        <input type="text" id="sample2_postcode" name="postcode" class="form-control" placeholder="우편번호" readonly>
-        <button type="button" class="btn btn-outline-secondary" onclick="sample2_execDaumPostcode()">우편번호 찾기</button>
-      </div>
-      <input type="text" id="sample2_address" name="address" class="form-control mb-2" placeholder="주소" readonly>
-      <input type="text" id="sample2_detailAddress" name="detailAddress" class="form-control mb-2" placeholder="상세주소">
-      <input type="text" id="sample2_extraAddress" name="extraAddress" class="form-control" placeholder="참고항목" readonly>
-    </div>
+			<div class="mb-3">
+				<label class="form-label">닉네임</label> <input type="text"
+					name="nickname" class="form-control" placeholder="사용할 닉네임을 입력하세요"
+					required>
+			</div>
 
-    <div class="mb-3">
-      <label class="form-label d-block">반려동물 소유 여부</label>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="hasPet" id="yes" value="yes" required>
-        <label class="form-check-label" for="yes">예</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="hasPet" id="no" value="no">
-        <label class="form-check-label" for="no">아니오</label>
-      </div>
-    </div>
+			<div class="mb-3">
+				<label class="form-label">주소</label>
+				<div class="input-group mb-2">
+					<input type="text" id="sample2_postcode" name="postcode"
+						class="form-control" placeholder="우편번호" readonly>
+					<button type="button" class="btn btn-outline-secondary"
+						onclick="sample2_execDaumPostcode()">우편번호 찾기</button>
+				</div>
+				<input type="text" id="sample2_address" name="address"
+					class="form-control mb-2" placeholder="주소" readonly> <input
+					type="text" id="sample2_detailAddress" name="detailAddress"
+					class="form-control mb-2" placeholder="상세주소"> <input
+					type="text" id="sample2_extraAddress" name="extraAddress"
+					class="form-control" placeholder="참고항목" readonly>
+			</div>
 
-    <div class="d-grid">
-      <button type="submit" class="btn brown-btn" id="signUp">회원가입</button>
-    </div>
-  </form>
-</div>
-<%@ include file="../../component/footer.jsp" %>
+			<div class="mb-3">
+				<label class="form-label d-block">반려동물 소유 여부</label>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="hasPet" id="yes"
+						value="yes" required> <label class="form-check-label"
+						for="yes">예</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" name="hasPet" id="no"
+						value="no"> <label class="form-check-label" for="no">아니오</label>
+				</div>
+			</div>
 
-<!-- 다음 주소 API 관련 요소 -->
-<div id="layer">
-  <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" onclick="closeDaumPostcode()" alt="닫기 버튼">
-</div>
+			<div class="d-grid">
+				<button type="submit" class="btn btn-brown" id="signUp">회원가입</button>
+			</div>
+		</form>
+	</div>
+	<%@ include file="../../component/footer.jsp"%>
 
-<!-- 다음 주소 API -->
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
+	<!-- 다음 주소 API 관련 요소 -->
+	<div id="layer">
+		<img src="//t1.daumcdn.net/postcode/resource/images/close.png"
+			id="btnCloseLayer" onclick="closeDaumPostcode()" alt="닫기 버튼">
+	</div>
+
+	<!-- 다음 주소 API -->
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
     var element_layer = document.getElementById('layer');
 
     function closeDaumPostcode() {
@@ -195,6 +214,6 @@ h2 {
         element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
     }
 </script>
-<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
+	<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
