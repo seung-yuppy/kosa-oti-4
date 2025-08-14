@@ -23,22 +23,23 @@
 				<ul class="card-list">
 					<li class="card-item">
 						<img src="/miniproj/image/ico_mbti.png" class="card-icon" />
-						<span>MBTI : ISTP</span>
+						<span>ISTP</span>
 					</li>	
 					<li class="card-item">
 						<img src="/miniproj/image/ico_gender.png" class="card-icon" />
-						<span>성별 : 수컷</span>
-					</li>	
-					<li class="card-item">
-						<img src="/miniproj/image/ico_location.png" class="card-icon" />
-						<span>경남 성남시</span>
+						<span>수컷</span>
 					</li>	
 					<li class="card-item">
 						<img src="/miniproj/image/ico_age.png" class="card-icon" />
-						<span>나이 : 1세</span>
+						<span>1세</span>
 					</li>	
+					<li class="card-item">
+						<img src="/miniproj/image/ico_location.png" class="card-icon" />
+						<span>경상남도</span>
+					</li>	
+
 				</ul>
-				<a href="#" class="btn btn-brown d-block">자세히 보기</a>
+				<a href="/miniproj/page/abandonedPet/abandonedPetDetail.jsp" class="btn btn-brown d-block">자세히 보기</a>
 			</div>
 		</div>
 	</div>

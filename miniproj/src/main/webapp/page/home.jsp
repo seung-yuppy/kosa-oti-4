@@ -4,7 +4,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>운명의 발바닥</title>
-  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
 	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
 </head>

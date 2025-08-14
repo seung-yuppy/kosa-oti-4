@@ -47,7 +47,7 @@
 .card-list {
 	display: grid !important;
 	grid-template-columns: 1fr 1fr !important; 
-	padding: 0 !important; 
+	padding: 0 !important;
 	row-gap: 5px !important; 
 	column-gap: 2px !important;
 }
