@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ include file="../../component/login_modal.jsp" %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container">
 		<img src="/miniproj/image/pawIcon.png" class="gnb-logo" alt="logo" /> 
@@ -33,7 +33,8 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link btn btn-secondary-brown" href="#" id="border-btn">
+					<a class="nav-link btn btn-secondary-brown" href="#" id="border-btn" data-bs-toggle="modal"
+		data-bs-target="#loginModal">
 						로그인
 					</a>
 				</li>

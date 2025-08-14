@@ -84,8 +84,8 @@ h2 {
   <form action="signupProcess.jsp" method="post">
 
     <div class="mb-3">
-      <label class="form-label">사용자 이름</label>
-      <input type="text" name="username" class="form-control" placeholder="사용자 이름을 입력하세요" required>
+      <label class="form-label">사용자 이메일</label>
+      <input type="email" name="username" class="form-control" placeholder="사용자 이메일을 입력하세요" required>
     </div>
 
     <div class="mb-3">
@@ -124,7 +124,6 @@ h2 {
     <div class="d-grid">
       <button type="submit" class="btn brown-btn" id="signUp">회원가입</button>
     </div>
-
   </form>
 </div>
 <%@ include file="../../component/footer.jsp" %>
