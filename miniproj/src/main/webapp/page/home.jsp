@@ -20,7 +20,7 @@
 				<a href="/miniproj/page/matching/matchQuiz.jsp" class="btn btn-secondary-brown">
 					운명의 동물 퀴즈
 				</a> 
-				<a href="#" class="btn btn-brown">
+				<a href="/miniproj/page/matching/matchResult.jsp" class="btn btn-brown">
 					운명의 동물 보기
 				</a>
 			</div>

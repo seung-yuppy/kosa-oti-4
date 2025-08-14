@@ -28,6 +28,11 @@
 			</ul>
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
+					<a class="nav-link btn btn-brown" href="/miniproj/page/user/myPage.jsp">
+						마이페이지
+					</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link btn btn-secondary-brown" href="#" id="border-btn">
 						로그인
 					</a>

@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>운명의 발바닥 테스트</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>운명의 발바닥 테스트</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
+	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
 <style>
 .option {
 	border: 1px solid #ccc;
@@ -23,6 +23,7 @@
 .option.selected {
 	background-color: #a75d00;
 	border-color: #6a5acd;
+	color: white;
 }
 
 .progress-bar {
@@ -34,7 +35,7 @@
 </head>
 <body>
 <%@ include file="../../component/header.jsp" %>
-	<div class="container mt-5">
+	<div class="container my-5">
 		<h5 class="text-end">
 			문제 <span id="currentIndex">1</span>/9
 		</h5>
@@ -56,9 +57,9 @@
 
 		<!-- 버튼 -->
 		<div class="mt-4 d-flex justify-content-between">
-			<button class="btn btn-secondary" onclick="prevQuestion()"
+			<button class="btn btn-secondary-brown" onclick="prevQuestion()"
 				id="prevBtn" disabled>이전</button>
-			<button class="btn " onclick="nextQuestion()" id="nextBtn"
+			<button class="btn btn-brown" onclick="nextQuestion()" id="nextBtn"
 				disabled>다음</button>
 		</div>
 	</div>
@@ -230,5 +231,6 @@
   renderQuestion();
 </script>
 <%@ include file="../../component/footer.jsp" %>
+<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

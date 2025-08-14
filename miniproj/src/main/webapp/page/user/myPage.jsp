@@ -35,8 +35,11 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>마이페이지</title>
+	<meta charset="UTF-8">
+	<title>마이페이지</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
+	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
 <style>
 body {
 	font-family: 'Pretendard', sans-serif;
@@ -73,11 +76,11 @@ body {
 }
 </style>
 <!-- Bootstrap 5 -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
+	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 	<%@ include file="../../component/header.jsp"%>
@@ -213,5 +216,6 @@ body {
 		</div>
 	</div>
 	<%@ include file="../../component/footer.jsp"%>
+	<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
