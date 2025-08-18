@@ -18,18 +18,20 @@
 	color: #a75d00;
 }
 
-
-
 .modal-footer {
 	display: flex !important;
 	flex-direction: column;
+}
+
+.modal-backdrop.show {
+	background-color: rgba(0, 0, 0, 0.2) !important; 
 }
 </style>
 
 </head>
 <body>
 	<!-- The Modal -->
-	<form action="signupProcess.jsp" method="post">
+	<form action="signupProcessServlet.java" method="post">
 		<div class="modal fade" id="loginModal">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -58,9 +60,8 @@
 					<!-- Modal footer -->
 					<div class="modal-footer">
 							<button type="submit" class="btn btn-brown" id="signUp">로그인</button>
-							<a href="forgotPassword.jsp" class="btn w-100">비밀번호를 잊어버렸나요?</a>
+							<a href="/miniproj/page/user/forgotPassword.jsp" class="btn w-100">비밀번호를 잊어버렸나요?</a>
 					</div>
-
 				</div>
 			</div>
 		</div>

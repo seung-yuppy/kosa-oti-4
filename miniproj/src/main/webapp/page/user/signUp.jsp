@@ -16,24 +16,13 @@ body {
 }
 
 .form-container {
-	max-width: 550px;
-	margin: 50px auto;
+	width: 700px;
+	margin: 20px auto;
 	background-color: #fff9f5;
 	padding: 30px;
 	border-radius: 12px;
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
-
-.brown-btn {
-	background-color: #a75d00;
-	color: white;
-}
-
-.brown-btn:hover {
-	background-color: #A0522D;
-	color: white;
-}
-
 .form-label, .form-check-label {
 	color: #a75d00;
 }
@@ -85,16 +74,15 @@ h2 {
 		<h2>회원가입</h2>
 		<form action="signupProcess.jsp" method="post">
 
-			<div class="mb-3">
+			<div class="d-grid">
 				<label class="form-label">사용자 이메일</label> <input type="email"
-					name="username" class="form-control" placeholder="사용자 이메일을 입력하세요"
+					name="username" class="form-control mb-2" placeholder="사용자 이메일을 입력하세요"
 					required>
-				<div class="d-grid">
-					<button type="submit" class="btn btn-brown" id="certificate">인증</button>
-				</div>
-				<input type="text" name="code" class="form-control"
+					<button type="button" class="btn btn-brown mb-2" id="certificate_mail" data-bs-toggle="popover" 
+					title="인증메일 전송완료" data-bs-content="메일함을 확인해주세요! 도착하지 않았다면 주소를 다시 한번 확인해 주세요.">인증메일 보내기</button>
+				<input type="text" name="code" class="form-control mb-2"
 					placeholder="이메일로 도착한 코드를 입력하세요" required>
-
+					<button type="button" class="btn btn-brown" id="certificate">인증</button>
 			</div>
 
 			<div class="mb-3">
@@ -213,6 +201,11 @@ h2 {
         element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
         element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
     }
+    
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
 </script>
 	<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
 </body>

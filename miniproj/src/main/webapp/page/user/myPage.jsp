@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="java.util.List, java.util.ArrayList" %>
-
 <%
     // 예시용 하드코딩 데이터
     String name = "김민준";
@@ -29,31 +28,25 @@
     animals.add(new Animal("두부", "시바견", "http://openapi.animal.go.kr/openapi/service/rest/fileDownloadSrvc/files/shelter/2025/08/202508130908273.jpeg"));
     animals.add(new Animal("초코", "말티즈", "http://openapi.animal.go.kr/openapi/service/rest/fileDownloadSrvc/files/shelter/2025/08/202508130808662.jpg"));
     animals.add(new Animal("콩이", "진돗개", "http://openapi.animal.go.kr/openapi/service/rest/fileDownloadSrvc/files/shelter/2025/08/202508131108540.jpg"));
-%>
 
+    request.setAttribute("nickname", nickname);
+%>
+<%@ include file="../../component/editProfile_modal.jsp" %>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<title>마이페이지</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
-	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>마이페이지</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="/miniproj/resource/css/common.css" rel="stylesheet">
+<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
 <style>
 body {
 	font-family: 'Pretendard', sans-serif;
 	background-color: #f9f9f9;
-}
-
-#brown-btn {
-	background-color: #a75d00;
-	color: white;
-}
-
-#brown-btn:hover {
-	background-color: #cc7000;
-	color: white;
 }
 
 .section {
@@ -74,54 +67,82 @@ body {
 	color: gray;
 	border: 1px solid #8B5E3C !important;
 }
+
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+}
+
+.flex-item-left {
+  flex: 50%;
+}
+
+.flex-item-right {
+  flex: 50%;
+}
 </style>
 <!-- Bootstrap 5 -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
-	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="/miniproj/resource/css/common.css" rel="stylesheet">
+<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
 	<%@ include file="../../component/header.jsp"%>
 	<div class="container my-5">
 		<!-- 프로필 정보 -->
-		<div class="section">
-			<h3>프로필 정보</h3>
-			<hr>
-			<div class="mb-3">
-				<label class="form-label">이름</label>
-				<div class="card">
-					<div class="card-body"><%= name %></div>
+		<div class="flex-container">
+			<div class="section flex-item-left">
+				<h3>프로필 정보</h3>
+				<hr>
+				<div class="mb-3">
+					<label class="form-label">이름</label>
+					<div class="card">
+						<div class="card-body"><%= name %></div>
+					</div>
 				</div>
-			</div>
 
-			<div class="mb-3">
-				<label class="form-label">주소</label>
-				<div class="card">
-					<div class="card-body"><%= address %></div>
+				<div class="mb-3">
+					<label class="form-label">주소</label>
+					<div class="card">
+						<div class="card-body"><%= address %></div>
+					</div>
 				</div>
-			</div>
 
-			<div class="mb-3">
-				<label class="form-label">닉네임</label>
-				<div class="card">
-					<div class="card-body"><%= nickname %></div>
+				<div class="mb-3">
+					<label class="form-label">닉네임</label>
+					<div class="card">
+						<div class="card-body"><%= nickname %></div>
+					</div>
 				</div>
-			</div>
 
-			<div class="mb-3">
-				<label class="form-label d-block">반려동물 소유 여부</label>
-				<div class="card">
-					<div class="card-body"><%= hasPet ? "예" : "아니요" %></div>
+				<div class="mb-3">
+					<label class="form-label d-block">반려동물 소유 여부</label>
+					<div class="card">
+						<div class="card-body"><%= hasPet ? "예" : "아니요" %></div>
+					</div>
 				</div>
-			</div>
 
-			<!-- 수정 버튼 -->
-			<button type="button" class="btn" data-bs-toggle="modal"
-				data-bs-target="#editProfileModal" id="brown-btn">프로필 수정</button>
+				<!-- 수정 버튼 -->
+				<button type="button" class="btn btn-brown" data-bs-toggle="modal"
+					data-bs-target="#editProfileModal">프로필 수정</button>
+			</div>
+			<div class="flex-item-right d-grid">
+				<h2>나의 강아지</h2>
+				<div>산책 매칭 서비스를 이용하고 싶다면 당신의 강아지 프로필을 추가해 보세요!</div>
+				<div class="mb-3">
+					<button type="button" class="btn btn-brown" data-bs-toggle="modal"
+						data-bs-target="#editProfileModal">나의 강아지 추가</button>
+				</div>
+
+			</div>
 		</div>
-
 
 		<!-- 관심 입양 동물 -->
 		<div class="section">
