@@ -1,10 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+	String usernameValue = (String) request.getAttribute("name");
+	if (usernameValue == null) {
+		usernameValue = "";
+	}
+
     String nicknameValue = (String) request.getAttribute("nickname");
-    if (nickname == null) {
-        nickname = "";
+    if (usernameValue == null) {
+    	usernameValue = "";
     }
+
 %>
 <!DOCTYPE html>
 <html>
@@ -32,6 +38,16 @@
 .modal-backdrop.show {
 	background-color: rgba(0, 0, 0, 0.2) !important;
 }
+#layer {
+	position: fixed;
+    z-index: 2050; 
+    display: none;
+    overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+	background: white;
+	border: 2px solid #8B5E3C;
+	border-radius: 8px;
+}
 </style>
 
 </head>
@@ -53,14 +69,20 @@
 						<div class="mb-3">
 							<label class="form-label">사용자 이메일</label> <input type="email"
 								name="username" class="form-control mb-2"
-								placeholder="사용자 이메일을 입력하세요" required>
-							<button type="button" class="btn btn-brown mb-2"
-								id="certificate_mail" data-bs-toggle="popover" title="인증메일 전송완료"
-								data-bs-content="메일함을 확인해주세요! 도착하지 않았다면 주소를 다시 한번 확인해 주세요.">인증메일
-								보내기</button>
+								value="<%= usernameValue %>" placeholder="사용자 이메일을 입력하세요"
+								required>
+							<div class="d-grid">
+								<button type="button" class="btn btn-brown mb-2"
+									id="certificate_mail" data-bs-toggle="popover"
+									title="인증메일 전송완료"
+									data-bs-content="메일함을 확인해주세요! 도착하지 않았다면 주소를 다시 한번 확인해 주세요.">인증메일
+									보내기</button>
+							</div>
 							<input type="text" name="code" class="form-control mb-2"
 								placeholder="이메일로 도착한 코드를 입력하세요" required>
-							<button type="button" class="btn btn-brown" id="certificate">인증</button>
+							<div class="d-grid">
+								<button type="button" class="btn btn-brown" id="certificate">인증</button>
+							</div>
 						</div>
 
 						<div class="mb-3">
@@ -71,8 +93,9 @@
 
 						<div class="mb-3">
 							<label class="form-label">닉네임</label> <input type="text"
-								name="nickname" class="form-control" value="<%= nicknameValue %>"
-								placeholder="사용할 닉네임을 입력하세요" required>
+								name="nickname" class="form-control"
+								value="<%= nicknameValue %>" placeholder="사용할 닉네임을 입력하세요"
+								required>
 						</div>
 
 						<div class="mb-3">

@@ -29,6 +29,7 @@
     animals.add(new Animal("초코", "말티즈", "http://openapi.animal.go.kr/openapi/service/rest/fileDownloadSrvc/files/shelter/2025/08/202508130808662.jpg"));
     animals.add(new Animal("콩이", "진돗개", "http://openapi.animal.go.kr/openapi/service/rest/fileDownloadSrvc/files/shelter/2025/08/202508131108540.jpg"));
 
+    request.setAttribute("name", name);
     request.setAttribute("nickname", nickname);
 %>
 <%@ include file="../../component/editProfile_modal.jsp" %>
@@ -75,12 +76,26 @@ body {
 }
 
 .flex-item-left {
-  flex: 50%;
+	flex: 50%;
 }
 
 .flex-item-right {
-  flex: 50%;
+	flex: 50%;
 }
+
+.search-card {
+	max-width: 1320px;
+	margin: 0 auto;
+	height: 410px;
+}
+
+.swiper-slide {
+	width: auto; /* 혹은 고정 px */
+	min-width: 280px; /* 카드가 충분히 보이도록 */
+	box-sizing: border-box;
+	padding: 10px;
+}
+
 </style>
 <!-- Bootstrap 5 -->
 <link
@@ -91,6 +106,8 @@ body {
 	rel="stylesheet">
 <link href="/miniproj/resource/css/common.css" rel="stylesheet">
 <link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 <body>
@@ -134,42 +151,68 @@ body {
 					data-bs-target="#editProfileModal">프로필 수정</button>
 			</div>
 			<div class="flex-item-right d-grid">
-				<h2>나의 강아지</h2>
-				<div>산책 매칭 서비스를 이용하고 싶다면 당신의 강아지 프로필을 추가해 보세요!</div>
+				<div class="swiper swiper-container" style="width: 100%; height: 550px;">
+					<div class="swiper-wrapper">
+						<% for (int i = 0; i < 3; i++) { %>
+						<div class="swiper-slide">
+							<jsp:include page="/component/myPetCard.jsp" />
+						</div>
+						<% } %>
+					</div>
+
+					<!-- 화살표 -->
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
 				<div class="mb-3">
-					<a class="btn btn-brown" href="/miniproj/page/pet/petSignUp.jsp">나의 강아지 추가</a>
+					<a type="button" class="btn btn-brown" 
+						href="/miniproj/page/pet/petSignUp.jsp">내 강아지 등록하기</a>
 				</div>
 
+				<!-- swiper js -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper(".swiper-container", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      loop: true,
+    });
+  </script>
 			</div>
+
 		</div>
 
-		<!-- 관심 입양 동물 -->
-		<div class="section">
-			<h3>내가 관심 있는 입양 동물</h3>
-			<div class="row row-cols-1 row-cols-md-4 g-4 mt-3" id="animal-list">
-				<% for (int i = 0; i < animals.size(); i++) {
+	</div>
+
+	<!-- 관심 입양 동물 -->
+	<div class="section">
+		<h3>내가 관심 있는 입양 동물</h3>
+		<div class="row row-cols-1 row-cols-md-4 g-4 mt-3" id="animal-list">
+			<% for (int i = 0; i < animals.size(); i++) {
         Animal a = animals.get(i);
         boolean isHidden = i >= 4; // 5번째부터 숨김
     %>
-				<div class="col animal-card <%= isHidden ? "more-card" : "" %>"
-					style="<%= isHidden ? "display: none;" : "" %>">
-					<div class="card h-100">
-						<img src="<%= a.image %>" class="card-img-top" alt="<%= a.name %>">
-						<div class="card-body">
-							<h5 class="card-title"><%= a.name %></h5>
-							<p class="card-text"><%= a.type %></p>
-							<a href="#" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
-						</div>
+			<div class="col animal-card <%= isHidden ? "more-card" : "" %>"
+				style="<%= isHidden ? "display: none;" : "" %>">
+				<div class="card h-100">
+					<img src="<%= a.image %>" class="card-img-top" alt="<%= a.name %>">
+					<div class="card-body">
+						<h5 class="card-title"><%= a.name %></h5>
+						<p class="card-text"><%= a.type %></p>
+						<a href="#" class="btn btn-outline-secondary btn-sm">자세히 보기</a>
 					</div>
 				</div>
-				<% } %>
 			</div>
+			<% } %>
 		</div>
-		<div class="text-center mt-3">
-			<button class="btn btn-outline-secondary" id="toggle-btn">더보기</button>
-		</div>
+	</div>
+	<div class="text-center mt-3">
+		<button class="btn btn-outline-secondary" id="toggle-btn">더보기</button>
+	</div>
 
-		<script>
+	<script>
     document.getElementById("toggle-btn").addEventListener("click", function () {
         const hiddenCards = document.querySelectorAll(".more-card");
         const isHidden = hiddenCards[0].style.display === "none";
@@ -183,8 +226,8 @@ body {
 </script>
 
 
-		<!-- 커뮤니티 활동 (탭 전환) -->
-		<div class="section">
+	<!-- 커뮤니티 활동 (탭 전환) -->
+	<div class="section">
 			<h3 class="mb-3">내 커뮤니티 활동</h3>
 
 			<!-- 탭 버튼 -->
