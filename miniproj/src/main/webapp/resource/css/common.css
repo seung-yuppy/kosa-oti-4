@@ -7,6 +7,11 @@ body {
 	min-height: 100vh;
 }
 
+/* bootstrap 초기화 */
+p {
+	margin-bottom: 0 !important;
+}
+
 /* 유틸리티 */
 /* 글자 색  */
 .text-brown {
@@ -24,6 +29,15 @@ body {
 /* 디스플레이 */
 .d-block {
 	display: block;
+}
+
+.d-flex {
+	display: flex;
+	gap: 20px;
+}
+
+.mt-10 {
+	margin-top: 120px;
 }
 
 /* 버튼 컴포넌트 */
@@ -66,6 +80,7 @@ body {
 	padding: 0 !important;
 	row-gap: 5px !important; 
 	column-gap: 2px !important;
+	margin-top: 5px;
 }
 
 .card-item {
@@ -81,6 +96,15 @@ body {
 	object-fit: contain !important;
 }
 
+.mypet-card-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	margin-top: 5px;
+}
+
+.margin-t {
+	margin-top: 20px !important;
+}
 /* 헤더 컴포넌트 */
 .gnb-title {
 	color: #a75d00 !important;
@@ -116,4 +140,59 @@ body {
 
 .community-image {
 	height: 300px !important;
+}
+
+/* 펫과 펫 페이지(petList)  */
+.swiper-container {
+    width: 35%;
+    height: 410px; 
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* (선택) 네비게이션 버튼 색상을 갈색 테마에 맞춤 */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #a75d00 !important;
+}
+
+.map {
+	width: 65%;
+	height: 410px;
+}
+
+/* 커뮤니티 게시판 */
+.community-image {
+   height: 300px !important;
+}
+
+.pagination.pagination-brown .page-link {
+  color: #374151;
+  background-color: #fff;
+  border-color: #e5e7eb;
+}
+.pagination.pagination-brown .page-link:hover {
+  color: #B9761A;
+  background-color: #fff;
+  border-color: #B9761A;
+}
+.pagination.pagination-brown .page-item.active .page-link,
+.pagination.pagination-brown .page-item.active .page-link:hover,
+.pagination.pagination-brown .page-item.active .page-link:focus {
+  color: #fff;
+  background-color: #B9761A;   /* 파란색 대신 갈색 */
+  border-color: #B9761A;
+}
+.pagination.pagination-brown .page-item.disabled .page-link {
+  color: #9ca3af;
+  background-color: #fff;
+  border-color: #e5e7eb;
+}
+/* 포커스 링(선택사항) */
+.pagination.pagination-brown .page-link:focus {
+  box-shadow: 0 0 0 .25rem rgba(185,118,26,.2);
 }

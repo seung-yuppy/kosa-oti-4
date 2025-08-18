@@ -7,6 +7,7 @@
     <title>내 주변 펫 찾기</title>
 	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
 	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         body {
             background-color: #f8f9fa;
@@ -14,10 +15,11 @@
         .search-card {
             max-width: 1320px;
             margin: 0 auto;
+            height: 410px;
         }
         .rounded {
 	        	width: 100%;
-	        	height: 500px;
+	        	height: 410px;
         }
     </style>
 </head>
@@ -29,12 +31,28 @@
         <section class="search-card">
             <div class="card p-4 shadow-sm card-border">
                 <h3 class="text-center mb-4 fw-bold">내 주변 펫 찾기 🗺️</h3>
-                <div id="map" class="rounded"></div>
+                <div class="d-flex">
+                		<div id="map" class="rounded map"></div>
+                		<div class="swiper swiper-container">
+					    <div class="swiper-wrapper">
+					    <%
+					        for (int i = 0; i < 3; i++) {
+					    %>
+					        <div class="swiper-slide">
+					            <jsp:include page="/component/myPetCard.jsp"></jsp:include>
+					        </div>
+					    <%
+					        }
+					    %>
+					    </div>
+					    <div class="swiper-button-next"></div>
+					    <div class="swiper-button-prev"></div>
+					</div>
+                </div>
             </div>
         </section>
 	<!-- 펫 리스트 영역 -->
-        <section class="mt-5 pt-4">
-            <h2 class="mb-4 fw-bold">주변 펫</h2>
+        <section class="mt-10 pt-4">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
 			<%
 				for (int i = 0; i < 5; i++) {
@@ -49,9 +67,23 @@
 	<!-- 헤더 영역 -->
 	<%@ include file="/component/footer.jsp" %>
    	<!-- script 영역 -->
+   	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c54be34b2a7cdb69fed5bbd7c59a90bb"></script>
 	<script>
+		/* 스와이퍼 */
+	    const swiper = new Swiper('.swiper-container', {
+	        // 옵션
+	        loop: true, // 무한 루프
+	
+	        // 네비게이션 버튼
+	        navigation: {
+	            nextEl: '.swiper-button-next',
+	            prevEl: '.swiper-button-prev',
+	        },
+	    });
+		
+		/* 카카오 맵 */
 	    var mapContainer = document.getElementById('map'); // 지도를 표시할 div
 	    var defaultPosition = new kakao.maps.LatLng(37.566826, 126.9786567); // 기본 위치 (서울시청)
 	

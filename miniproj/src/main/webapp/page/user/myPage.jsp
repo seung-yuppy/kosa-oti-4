@@ -137,8 +137,7 @@ body {
 				<h2>나의 강아지</h2>
 				<div>산책 매칭 서비스를 이용하고 싶다면 당신의 강아지 프로필을 추가해 보세요!</div>
 				<div class="mb-3">
-					<button type="button" class="btn btn-brown" data-bs-toggle="modal"
-						data-bs-target="#editProfileModal">나의 강아지 추가</button>
+					<a class="btn btn-brown" href="/miniproj/page/pet/petSignUp.jsp">나의 강아지 추가</a>
 				</div>
 
 			</div>

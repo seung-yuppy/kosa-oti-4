@@ -7,7 +7,7 @@
 	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
 	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 	<!-- 헤더 영역 -->
 	<%@ include file="../../component/header.jsp"%>
 	<div class="container my-5">
