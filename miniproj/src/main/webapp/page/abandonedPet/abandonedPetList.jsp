@@ -6,16 +6,15 @@
 	<title>인간과 펫(유기동물 리스트)</title>
 	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
 	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/miniproj/resource/js/bootstrap.bundle.min.js" rel="stylesheet">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 	<!-- 헤더 영역 -->
 	<%@ include file="../../component/header.jsp"%>
-	<div class="container mt-4">
+	<div class="container my-5">
 		<div class="row g-4">
 			<!-- 필터 선택 영역 -->
 			<aside class="col-lg-3">
-				<div class="filter-card p-3 shadow-sm">
+				<div class="filter-card p-3 shadow-sm card-border">
 					<h5 class="fw-bold mb-3 text-brown">필터</h5>
 					<form method="GET">
 						<div class="mb-3">
@@ -63,10 +62,10 @@
 								<option value="8+">8세 이상</option>
 							</select>
 						</div>
-						<hr>
+						<hr class="hr-line">
 						<div class="btn-container">
-							<button type="reset" class="btn btn-secondary-brown w-100">필터 초기화</button>
-							<button type="submit" class="btn btn-brown w-100">검색하기</button>
+							<button type="reset" class="btn btn-secondary-brown d-block">필터 초기화</button>
+							<button type="submit" class="btn btn-brown d-block">검색하기</button>
 						</div>
 					</form>
 				</div>
@@ -76,9 +75,9 @@
 				<h3 class="mb-4 fw-bold">입양 가능 펫 목록</h3>
 				<div class="row g-3">
 				<% 
-					for (int i = 0; i < 5; i++) {
+					for (int i = 0; i < 6; i++) {
 				%>
-						<jsp:include page="/component/petCard.jsp"></jsp:include>
+						<jsp:include page="/component/abandonedPetCard.jsp"></jsp:include>
 				<%
 					}
 				%>
@@ -88,5 +87,7 @@
 	</div>
 	<!-- footer 영역 -->
 	<%@ include file="../../component/footer.jsp"%>
+	<!-- script 영역 -->
+	<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

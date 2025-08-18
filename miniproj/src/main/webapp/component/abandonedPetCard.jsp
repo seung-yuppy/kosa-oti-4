@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>petCard</title>
+	<title>abandonedPetCard</title>
 	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
 	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -16,14 +16,14 @@
 				alt="크림과 츄세이" 
 			>
 			<div class="card-body card-border">
-				<h5 class="card-title fw-bold">초코</h5>
-				<p class="card-text text-muted text-small">
-					장난기 많고 사람을 좋아하는 골든 리트리버 보리입니다. 산책과 공놀이를 정말 좋아해요.
+				<h5 class="card-title fw-bold">믹스견</h5>
+				<p class="card-text text-muted text-small" id="card-description">
+					이 강아지는 첫 만남에는 조금 낯을 가리지만, 마음을 열면 세상에서 가장 든든한 동반자가 됩니다. 당신의 세심함과 이 아이의 순수함이 만나면 평생의 인연이 될 거예요.
 				</p>
 				<ul class="card-list">
 					<li class="card-item">
-						<img src="/miniproj/image/ico_individual.png" class="card-icon" />
-						<span>믹스견</span>
+						<img src="/miniproj/image/ico_mbti.png" class="card-icon" />
+						<span>ISTP</span>
 					</li>	
 					<li class="card-item">
 						<img src="/miniproj/image/ico_gender.png" class="card-icon" />
@@ -39,11 +39,20 @@
 					</li>	
 
 				</ul>
-				<a href="#" class="btn btn-brown d-block">💬 1대1 채팅</a>
+				<a href="/miniproj/page/abandonedPet/abandonedPetDetail.jsp" class="btn btn-brown d-block">자세히 보기</a>
 			</div>
 		</div>
 	</div>
 	<!-- script 영역 -->
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const cardTexts = document.querySelectorAll("#card-description");
+			cardTexts.forEach((cardText) => {
+				if(cardText.innerText.length > 30) 
+					cardText.textContent = cardText.innerText.substring(0, 30) + "....";
+			});
+		});
+	</script>
 	<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,9 +1,24 @@
 @charset "UTF-8";
 
+/*  footer를 항상 맨 아래에 두기 위함 */
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 /* 유틸리티 */
 /* 글자 색  */
 .text-brown {
 	color: #a75d00 !important; 
+}
+
+.hr-line {
+	color: #a75d00;
+}
+
+.text-small {
+	font-size: 13px;
 }
 
 /* 디스플레이 */
@@ -38,6 +53,7 @@
 .card-image {
 	height: 200px !important;
 	border: 1px solid #a75d00 !important; 
+	object-fit: cover;
 }
 
 .card-border {

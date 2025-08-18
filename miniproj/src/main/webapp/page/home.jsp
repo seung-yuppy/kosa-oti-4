@@ -9,7 +9,7 @@
 </head>
 <body>
 	<!-- 헤더 영역 -->
-	<%@ include file="/component/header.jsp" %>
+	<%@ include file="/component/header.jsp" %> 
 	<!-- 매칭 유기동물 영역 -->
 	<div class="container my-5">
 		<div class="hero-section">
@@ -32,7 +32,7 @@
 		<%
 			for (int i = 0; i < 4; i++) {
 		%>
-				<jsp:include page="/component/petCard.jsp"></jsp:include>
+				<jsp:include page="/component/abandonedPetCard.jsp"></jsp:include>
 		<%
 			}
 		%>

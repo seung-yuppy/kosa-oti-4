@@ -16,12 +16,12 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link gnb-item" href="#">
+					<a class="nav-link gnb-item" href="/miniproj/page/pet/petList.jsp">
 						펫과 펫
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link gnb-item" href="#">
+					<a class="nav-link gnb-item" href="/miniproj/page/community/communityMain.jsp">
 						커뮤니티
 					</a>
 				</li>
@@ -33,10 +33,9 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link btn btn-secondary-brown" href="#" id="border-btn" data-bs-toggle="modal"
-		data-bs-target="#loginModal">
+					<button type="button" class="nav-link btn btn-secondary-brown" id="border-btn" data-bs-toggle="modal" data-bs-target="#loginModal">
 						로그인
-					</a>
+					</button>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link btn btn-brown" href="/miniproj/page/user/signUp.jsp">
