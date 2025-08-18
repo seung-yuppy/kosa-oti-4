@@ -187,7 +187,7 @@ body {
 	</div>
 
 	<!-- 관심 입양 동물 -->
-	<div class="section">
+	<div class="container my-5 section">
 		<h3>내가 관심 있는 입양 동물</h3>
 		<div class="row row-cols-1 row-cols-md-4 g-4 mt-3" id="animal-list">
 			<% for (int i = 0; i < animals.size(); i++) {
@@ -208,7 +208,7 @@ body {
 			<% } %>
 		</div>
 	</div>
-	<div class="text-center mt-3">
+	<div class="container my-5 text-center mt-3">
 		<button class="btn btn-outline-secondary" id="toggle-btn">더보기</button>
 	</div>
 
@@ -227,7 +227,7 @@ body {
 
 
 	<!-- 커뮤니티 활동 (탭 전환) -->
-	<div class="section">
+	<div class="container my-5 section">
 			<h3 class="mb-3">내 커뮤니티 활동</h3>
 
 			<!-- 탭 버튼 -->
