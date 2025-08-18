@@ -57,7 +57,7 @@
 <body>
 <!-- 헤더 영역 -->
 	<%@ include file="/component/header.jsp" %>
-	<div class="container py-5" style="max-width: 980px;">
+	<div class="container my-5" style="max-width: 980px;">
 		<!-- Title -->
 		<h1 class="fw-bold fs-1 mb-4">커뮤니티</h1>
 

@@ -50,7 +50,7 @@
 <body>
 	<!-- 헤더 영역 -->
 	<%@ include file="/component/header.jsp"%>
-	<div class="container py-5" style="max-width: 980px;">
+	<div class="container my-5" style="max-width: 980px;">
 		<!-- Title -->
 		<h1 class="fw-bold fs-1 mb-4">커뮤니티</h1>
 
@@ -80,8 +80,9 @@
 					href="#" class="nav-link rounded-pill tab">실종 동물을 찾아주세요 게시판</a>
 			</nav>
 			<div class="d-flex gap-2 ms-auto">
-				<button class="btn btn-outline-secondary">전체보기</button>
-				<button class="btn btn-brown">새 글 작성</button>
+			<a class></a>
+				<a class="btn btn-outline-secondary" href="${pageContext.request.contextPath}/page/community/communityMain.jsp">전체보기</a>
+<a class="btn btn-brown" href="${pageContext.request.contextPath}/page/community/communityCreate.jsp">새글 작성</a>
 			</div>
 		</div>
 

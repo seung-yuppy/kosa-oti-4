@@ -121,9 +121,9 @@
 }
 </style>
 <body>
-<!-- 헤더 영역 -->
-	<%@ include file="/component/header.jsp" %>
-	<div class="container py-5" style="max-width: 980px;">
+	<!-- 헤더 영역 -->
+	<%@ include file="/component/header.jsp"%>
+	<div class="container my-5" style="max-width: 980px;">
 		<!-- Title -->
 		<h1 class="fw-bold fs-1 mb-4">커뮤니티</h1>
 
@@ -153,200 +153,117 @@
 					href="#" class="nav-link rounded-pill tab">실종 동물을 찾아주세요 게시판</a>
 			</nav>
 			<div class="d-flex gap-2 ms-auto">
-				<button class="btn btn-outline-secondary">전체보기</button>
-				<button class="btn btn-brown">새 글 작성</button>
+				<a class="btn btn-outline-secondary"
+					href="${pageContext.request.contextPath}/page/community/communityMain.jsp">전체보기</a>
+				<a class="btn btn-brown"
+					href="${pageContext.request.contextPath}/page/community/communityCreate.jsp">새글
+					작성</a>
 			</div>
 		</div>
 
 		<!-- ===== 상세 컨텐츠 START ===== -->
-		<section class="bg-white rounded-12 border p-3 p-sm-4 mb-5">
-
-			<!-- 작성자/메타 + 액션 -->
-			<div class="d-flex align-items-center justify-content-between">
-				<div class="d-flex align-items-center gap-3">
-					<img class="avatar-40"
-						src="${empty post.authorAvatarUrl ? pageContext.request.contextPath.concat('/image/img_user.png') : post.authorAvatarUrl}"
-						alt="작성자">
-					<div>
-						<div class="d-flex align-items-center gap-2">
-							<strong class="me-1"><c:out value="${post.authorName}" /></strong>
-
+		<!-- Detail Card -->
+		<article class="card shadow-sm border-0 mb-4">
+			<div class="card-body">
+				<!-- Author -->
+				<div class="d-flex justify-content-between align-items-start mb-3">
+					<div class="d-flex align-items-center gap-3">
+						<div class="rounded-circle overflow-hidden"
+							style="width: 40px; height: 40px;">
+							<img src="https://picsum.photos/80/80?grayscale" alt=""
+								class="img-fluid">
 						</div>
-						<small class="text-muted"> <fmt:formatDate
-								value="${post.createdAt}" pattern="yyyy.MM.dd HH:mm" /> <c:if
-								test="${post.updatedAt != null}">
-								<span class="count-dot"></span>수정됨 <fmt:formatDate
-									value="${post.updatedAt}" pattern="yyyy.MM.dd HH:mm" />
-							</c:if>
-						</small>
+						<div>
+							<div class="d-flex align-items-center gap-2">
+								<span class="fw-bold">김하나</span>
+							</div>
+							<small class="text-muted">2시간 전</small>
+						</div>
 					</div>
-				</div>
-
-				<div class="d-flex gap-2">
-					<c:if test="${canEdit}">
-						<a class="btn btn-outline-gray btn-sm"
-							href="/community/${post.id}/edit">수정하기</a>
-					</c:if>
-					<c:if test="${canDelete}">
+					<div class="d-flex gap-2">
+						<a class="btn btn-outline-gray btn-sm" href="${pageContext.request.contextPath}/page/community/communityUpdate.jsp">수정하기</a>						
 						<form method="post" action="/community/${post.id}/delete"
-							onsubmit="return confirm('정말 삭제하시겠습니까?');">
+							class="m-0">
 							<button type="submit" class="btn btn-outline-gray btn-sm">삭제하기</button>
 						</form>
-					</c:if>
+					</div>
+				</div>
+
+				<!-- Title -->
+				<h2 class="fs-3 fw-bold mb-3">강아지 산책 시 주의할 점!</h2>
+
+				<!-- Thumbnail -->
+				<div class="rounded overflow-hidden border mb-3"
+					style="height: 300px; background: url('https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&amp;w=1200&amp;auto=format&amp;fit=crop') center/cover no-repeat;">
+				</div>
+
+				<!-- Content -->
+				<p class="text-secondary lh-lg mb-3">요즘 날씨가 너무 좋아서 강아지 산책하기 딱
+					좋은데요! 산책할 때 꼭 챙겨야 할 준비물과 주의할 점들을 공유합니다. 배변 봉투, 물, 그리고 목줄은 필수겠죠? 혹시
+					놓치기 쉬운 점이 있을까요?</p>
+
+				<hr>
+
+				<!-- Stats -->
+				<div class="d-flex gap-4 text-muted">
+					<div class="d-flex align-items-center gap-1">
+						<img src="/miniproj/image/ico_like.png" alt="좋아요" width="18"
+							height="18"> <span>1,234</span>
+					</div>
+					<div class="d-flex align-items-center gap-1">
+						<img src="/miniproj/image/ico_comment.png" alt="댓글" width="18"
+							height="18"> <span>45</span>
+					</div>
+					<div class="d-flex align-items-center gap-1">
+						<img src="/miniproj/image/ico_watch.png" alt="조회수" width="18"
+							height="18"> <span>210</span>
+					</div>
 				</div>
 			</div>
-
-			<!-- 제목 -->
-			<h2 class="post-title fw-bold fs-3 mt-3 mb-3">
-				<c:out value="${post.title}" />
-			</h2>
-
-			<!-- 대표 이미지 -->
-			<img class="post-cover mb-4"
-				src="${empty post.coverUrl ? 
-        'https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&amp;w=1200&amp;auto=format&amp;fit=crop' 
-        : post.coverUrl}"
-				alt="게시글 이미지">
-
-			<!-- 본문 -->
-			<div class="post-body text-muted-700" style="line-height: 1.85;">
-				<c:forEach var="para" items="${post.paragraphs}">
-					<p>
-						<c:out value="${para}" />
-					</p>
-				</c:forEach>
-				<!-- 단일 필드로 저장했다면 -->
-				<c:if test="${empty post.paragraphs}">
-					<pre class="mb-0"
-						style="white-space: pre-wrap; font-family: inherit;">
-${empty post.content ? '요즘 날씨가 너무 좋아서 강아지 산책하기 딱 좋은데요! 산책할 때 꼭 챙겨야 할 준비물과 주의할 점들을 공유합니다. 배변 봉투, 물, 그리고 목줄은 필수겠죠? 혹시 놓치기 쉬운 점이 있을까요?' : post.content}
-  </pre>
-				</c:if>
-			</div>
-
-			<!-- 구분선 -->
-			<div class="my-4 divider"></div>
-
-			<!-- 하단 메타(조회/댓글/좋아요) -->
-			<div class="d-flex align-items-center gap-3 flex-wrap text-muted">
-				<!-- 조회수 -->
-				<span class="d-inline-flex align-items-center gap-1"> <svg
-						class="icon-16" viewBox="0 0 24 24" fill="none"
-						stroke="currentColor" stroke-width="1.8">
-          <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"></path>
-          <circle cx="12" cy="12" r="3"></circle>
-        </svg> <span><c:out value="${post.viewCount}" /></span>
-				</span>
-
-				<!-- 댓글수 -->
-				<span class="d-inline-flex align-items-center gap-1"> <svg
-						class="icon-16" viewBox="0 0 24 24" fill="none"
-						stroke="currentColor" stroke-width="1.8">
-          <path
-							d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"></path>
-        </svg> <span><c:out value="${post.commentCount}" /></span>
-				</span>
-
-				<!-- 좋아요 -->
-				<form method="post" action="/community/${post.id}/like"
-					class="d-inline-flex align-items-center gap-1">
-					<button type="submit"
-						class="btn btn-sm btn-outline-gray d-inline-flex align-items-center gap-1">
-						<svg class="icon-16" viewBox="0 0 24 24" fill="none"
-							stroke="currentColor" stroke-width="1.8">
-            <path
-								d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path>
-          </svg>
-						<span><c:out value="${post.likeCount}" /></span>
-					</button>
-				</form>
-			</div>
-		</section>
+		</article>
 		<!-- ===== 상세 컨텐츠 END ===== -->
 
-		<!-- ===== 댓글 영역(옵션) ===== -->
-		<section class="bg-white rounded-12 border p-3 p-sm-4">
-			<h3 class="fs-5 mb-3">
-				댓글 <span class="text-muted">(<c:out
-						value="${post.commentCount}" />)
-				</span>
-			</h3>
+		<!-- 댓글 -->
+    <section class="bg-white rounded-12 border p-3 p-sm-4">
+      <h3 class="fs-5 mb-3">댓글 <span class="text-muted">(<span id="cmtCnt">${post.commentCount}</span>)</span></h3>
 
-			<!-- 댓글 작성 -->
-			<c:if test="${isAuthenticated}">
-				<form class="mb-4" method="post"
-					action="/community/${post.id}/comments">
-					<div class="mb-2">
-						<textarea name="content" class="form-control" rows="3"
-							placeholder="댓글을 남겨보세요"></textarea>
-					</div>
-					<div class="text-end">
-						<button type="submit" class="btn btn-brown btn-sm">댓글 등록</button>
-					</div>
-				</form>
-			</c:if>
+      <!-- 댓글 작성 (표시 여부 JS로 제어) -->
+      <div id="commentWrite" data-auth="${isAuthenticated}">
+        <form class="mb-4" method="post" action="${pageContext.request.contextPath}/community/${post.id}/comments">
+          <textarea name="content" class="form-control mb-2" rows="3" placeholder="댓글을 남겨보세요"></textarea>
+          <div class="text-end">
+            <button type="submit" class="btn btn-brown btn-sm">댓글 등록</button>
+          </div>
+        </form>
+      </div>
 
-			<!-- 댓글 리스트 -->
-			<div class="list-group list-group-flush">
-				<c:forEach var="cmt" items="${post.comments}">
-					<div class="list-group-item px-0">
-						<div class="d-flex align-items-start gap-3">
-							<img class="avatar-40"
-						src="${empty post.authorAvatarUrl ? pageContext.request.contextPath.concat('/image/img_user.png') : post.authorAvatarUrl}"
-						alt="작성자">
-							<div class="flex-grow-1">
-								<div class="d-flex align-items-center gap-2">
-									<strong><c:out value="${cmt.authorName}" /></strong> <small
-										class="text-muted"><fmt:formatDate
-											value="${cmt.createdAt}" pattern="yyyy.MM.dd HH:mm" /></small>
-								</div>
-								<div class="mt-1">
-									<c:out value="${cmt.content}" />
-								</div>
-								<c:if test="${cmt.mine}">
-									<div class="mt-2 d-flex gap-2">
-										<a class="btn btn-outline-gray btn-sm"
-											href="/community/${post.id}/comments/${cmt.id}/edit">수정</a>
-										<form method="post"
-											action="/community/${post.id}/comments/${cmt.id}/delete"
-											onsubmit="return confirm('삭제하시겠어요?');">
-											<button type="submit" class="btn btn-outline-gray btn-sm">삭제</button>
-										</form>
-									</div>
-								</c:if>
-							</div>
-						</div>
-					</div>
-				</c:forEach>
+      <!-- 댓글 리스트 (서버 렌더링을 못 쓰는 경우, JS로 주입 가능) -->
+      <div class="list-group list-group-flush" id="commentList">
+        <!-- 서버에서 직접 그려 넣을 수 있으면 여기 정적 HTML로 넣으세요 -->
+        <!-- 예: 반복문 없이 백엔드에서 이미 문자열로 만들어 전달했다면 ${commentsHtml} 출력 -->
+      </div>
 
-				<c:if test="${empty post.comments}">
-					<div class="text-center text-muted py-4">첫 댓글을 남겨보세요.</div>
-				</c:if>
-			</div>
-		</section>
+      <div id="noComment" class="text-center text-muted py-4">첫 댓글을 남겨보세요.</div>
+    </section>
 		<!-- ===== 댓글 영역 END ===== -->
 
-		<!-- 목록/이전다음 -->
-		<div class="d-flex justify-content-between align-items-center mt-4">
-			<a href="/community" class="btn btn-outline-gray">목록으로</a>
-			<div class="d-flex gap-2">
-				<c:if test="${prevPost != null}">
-					<a class="btn btn-outline-gray" href="/community/${prevPost.id}">이전
-						글</a>
-				</c:if>
-				<c:if test="${nextPost != null}">
-					<a class="btn btn-outline-gray" href="/community/${nextPost.id}">다음
-						글</a>
-				</c:if>
-			</div>
-		</div>
+    <!-- 목록/이전다음 -->
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <a href="${pageContext.request.contextPath}/community" class="btn btn-outline-secondary">목록으로</a>
+      <div class="d-flex gap-2">
+        <!-- 이전/다음 링크는 존재 여부를 JS로 토글 -->
+        <a id="prevBtn" class="btn btn-outline-secondary"
+           href="${pageContext.request.contextPath}/community/${prevPost.id}"
+           data-exists="${prevPost != null}">이전 글</a>
+        <a id="nextBtn" class="btn btn-outline-secondary"
+           href="${pageContext.request.contextPath}/community/${nextPost.id}"
+           data-exists="${nextPost != null}">다음 글</a>
+      </div>
+    </div>
+  </div>
 
-	</div>
-
-
-
-	</div>
+    
 	<!-- footer 영역 -->
-	<%@ include file="/component/footer.jsp" %>
+	<%@ include file="/component/footer.jsp"%>
 </body>
 </html>

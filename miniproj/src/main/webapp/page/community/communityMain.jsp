@@ -9,7 +9,6 @@
 <link href="/miniproj/resource/css/common.css" rel="stylesheet">
 </head>
 <style>
-
 .nav-pills {
 	display: flex;
 	flex-wrap: nowrap; /* 줄바꿈 방지 (필요시 wrap으로 변경 가능) */
@@ -47,13 +46,18 @@
 	outline: none;
 	box-shadow: 0 0 0 0.2rem rgba(185, 118, 26, 0.15);
 }
+.pagination-brown { /* 원하는 페이지에서만 사용 */
+  --bs-pagination-active-bg: #B9761A !important;
+  --bs-pagination-active-border-color: #B9761A !important;
+  --bs-pagination-hover-color: #B9761A !important;
+}
 </style>
 <!-- Bootstrap -->
-<body class="bg-light">
+<body>
 	<!-- 헤더 영역 -->
-	<%@ include file="/component/header.jsp" %>
-	
-	<div class="container py-5" style="max-width: 980px;">
+	<%@ include file="/component/header.jsp"%>
+
+	<div class="container my-5" style="max-width: 980px;">
 		<!-- Title -->
 		<h1 class="fw-bold fs-1 mb-4">커뮤니티</h1>
 
@@ -84,79 +88,72 @@
 			</nav>
 			<div class="d-flex gap-2 ms-auto">
 				<button class="btn btn-outline-secondary">전체보기</button>
-				<a class="btn btn-brown" href="${pageContext.request.contextPath}/page/community/communityCreate.jsp">새 글 작성</a>
+				<a class="btn btn-brown"
+					href="${pageContext.request.contextPath}/page/community/communityCreate.jsp">새
+					글 작성</a>
 			</div>
 		</div>
 
 		<!-- Card -->
-		<article class="card shadow-sm border-0 mb-4">
-			<div class="card-body">
-				<!-- Author -->
-				<div class="d-flex justify-content-between align-items-start mb-3">
-					<div class="d-flex align-items-center gap-3">
-						<div class="rounded-circle overflow-hidden"
-							style="width: 40px; height: 40px;">
-							<img src="https://picsum.photos/80/80?grayscale" alt=""
-								class="img-fluid">
-						</div>
-						<div>
-							<div class="d-flex align-items-center gap-2">
-								<span class="fw-bold">김하나</span> 
+		<a class="text-decoration-none text-dark"
+			href="${pageContext.request.contextPath}/page/community/communityDetail.jsp">
+			<article class="card shadow-sm border-0 mb-4">
+				<div class="card-body">
+					<!-- Author -->
+					<div class="d-flex justify-content-between align-items-start mb-3">
+						<div class="d-flex align-items-center gap-3">
+							<div class="rounded-circle overflow-hidden"
+								style="width: 40px; height: 40px;">
+								<img src="https://picsum.photos/80/80?grayscale" alt=""
+									class="img-fluid">
 							</div>
-							<small class="text-muted">2시간 전</small>
+							<div>
+								<div class="d-flex align-items-center gap-2">
+									<span class="fw-bold">김하나</span>
+								</div>
+								<small class="text-muted">2시간 전</small>
+							</div>
+						</div>
+						<span class="text-muted fs-4" role="button">⋯</span>
+					</div>
+
+					<!-- Title -->
+					<h2 class="fs-3 fw-bold mb-3">강아지 산책 시 주의할 점!</h2>
+
+					<!-- Thumbnail -->
+					<div class="rounded overflow-hidden border mb-3"
+						style="height: 300px; background: url('https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&amp;w=1200&amp;auto=format&amp;fit=crop') center/cover no-repeat;">
+					</div>
+
+					<!-- Content -->
+					<p class="text-secondary lh-lg mb-3">요즘 날씨가 너무 좋아서 강아지 산책하기 딱
+						좋은데요! 산책할 때 꼭 챙겨야 할 준비물과 주의할 점들을 공유합니다. 배변 봉투, 물, 그리고 목줄은 필수겠죠? 혹시
+						놓치기 쉬운 점이 있을까요?</p>
+
+					<hr>
+
+					<!-- Stats -->
+					<div class="d-flex gap-4 text-muted">
+						<div class="d-flex align-items-center gap-1">
+							<img src="/miniproj/image/ico_like.png" alt="좋아요" width="18"
+								height="18"> <span>1,234</span>
+						</div>
+						<div class="d-flex align-items-center gap-1">
+							<img src="/miniproj/image/ico_comment.png" alt="댓글" width="18"
+								height="18"> <span>45</span>
+						</div>
+						<div class="d-flex align-items-center gap-1">
+							<img src="/miniproj/image/ico_watch.png" alt="조회수" width="18"
+								height="18"> <span>210</span>
 						</div>
 					</div>
-					<span class="text-muted fs-4" role="button">⋯</span>
 				</div>
-
-				<!-- Title -->
-				<h2 class="fs-3 fw-bold mb-3">강아지 산책 시 주의할 점!</h2>
-
-				<!-- Thumbnail -->
-				<div class="rounded overflow-hidden border mb-3"
-					style="height: 300px; background: url('https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&amp;w=1200&amp;auto=format&amp;fit=crop') center/cover no-repeat;">
-				</div>
-
-				<!-- Content -->
-				<p class="text-secondary lh-lg mb-3">요즘 날씨가 너무 좋아서 강아지 산책하기 딱
-					좋은데요! 산책할 때 꼭 챙겨야 할 준비물과 주의할 점들을 공유합니다. 배변 봉투, 물, 그리고 목줄은 필수겠죠? 혹시
-					놓치기 쉬운 점이 있을까요?</p>
-
-				<hr>
-
-				<!-- Stats -->
-				<div class="d-flex gap-4 text-muted">
-					<div class="d-flex align-items-center gap-1">
-						<svg width="18" height="18" fill="none" stroke="currentColor"
-							stroke-width="2">
-            <path
-								d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1 7.8 7.6 7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
-          </svg>
-						<span>1,234</span>
-					</div>
-					<div class="d-flex align-items-center gap-1">
-						<svg width="18" height="18" fill="none" stroke="currentColor"
-							stroke-width="2">
-            <path
-								d="M21 12a8 8 0 1 1-3-6.3L21 4l-1.7 4.6A8 8 0 0 1 21 12z" />
-          </svg>
-						<span>45</span>
-					</div>
-					<div class="d-flex align-items-center gap-1">
-						<svg width="18" height="18" fill="none" stroke="currentColor"
-							stroke-width="2">
-            <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
-            <circle cx="12" cy="12" r="3" />
-          </svg>
-						<span>210</span>
-					</div>
-				</div>
-			</div>
-		</article>
+			</article>
+		</a>
 
 		<!-- Pagination -->
 		<nav>
-			<ul class="pagination justify-content-center">
+			<ul class="pagination justify-content-center pagination-brown">
 				<li class="page-item"><a class="page-link" href="#"><span
 						aria-hidden="true">&laquo;</span> Previous</a></li>
 				<li class="page-item active"><span class="page-link">1</span></li>
@@ -172,6 +169,6 @@
 
 	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
 	<!-- footer 영역 -->
-	<%@ include file="/component/footer.jsp" %>
+	<%@ include file="/component/footer.jsp"%>
 </body>
 </html>
