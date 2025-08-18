@@ -50,7 +50,9 @@
 </style>
 <!-- Bootstrap -->
 <body class="bg-light">
-
+	<!-- 헤더 영역 -->
+	<%@ include file="/component/header.jsp" %>
+	
 	<div class="container py-5" style="max-width: 980px;">
 		<!-- Title -->
 		<h1 class="fw-bold fs-1 mb-4">커뮤니티</h1>
@@ -82,7 +84,7 @@
 			</nav>
 			<div class="d-flex gap-2 ms-auto">
 				<button class="btn btn-outline-secondary">전체보기</button>
-				<button class="btn btn-brown">새 글 작성</button>
+				<a class="btn btn-brown" href="${pageContext.request.contextPath}/page/community/communityCreate.jsp">새 글 작성</a>
 			</div>
 		</div>
 
@@ -99,8 +101,7 @@
 						</div>
 						<div>
 							<div class="d-flex align-items-center gap-2">
-								<span class="fw-bold">김하나</span> <span
-									class="badge bg-secondary">일반회원</span>
+								<span class="fw-bold">김하나</span> 
 							</div>
 							<small class="text-muted">2시간 전</small>
 						</div>
@@ -170,5 +171,7 @@
 	</div>
 
 	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+	<!-- footer 영역 -->
+	<%@ include file="/component/footer.jsp" %>
 </body>
 </html>
