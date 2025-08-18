@@ -184,6 +184,18 @@
 	<!-- script 영역 -->
 	<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
     <script>
+    		// 견종 사용자 지정 시 input text 보여주기
+	    document.querySelector('#petBreedSelect').addEventListener('change', function() {
+	        var customBreedWrapper = document.getElementById('customBreedWrapper');
+	        // 'other' 옵션을 선택하면 d-none 클래스를 제거하여 보이게 하고, 아니면 다시 추가하여 숨김
+	        if (this.value === 'other') {
+	            customBreedWrapper.classList.remove('d-none');
+	        } else {
+	            customBreedWrapper.classList.add('d-none');
+	        }
+	    });
+    
+    		// drag & drop 파일 영역
 	    const dropbox = document.querySelector('#dropbox');
 		const fileInput = document.querySelector('#fileInput');
 		const fileSelectBtn = document.querySelector('#fileSelectBtn');
