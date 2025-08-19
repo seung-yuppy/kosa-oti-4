@@ -2,7 +2,7 @@
 
 .chat-list {
 	position: fixed;
-	bottom: 70px;
+	bottom: 80px;
 	right: 20px;
 	width: 320px;
 	max-height: 500px;
@@ -81,7 +81,7 @@
 
 .chat-detail {
 	position: fixed;
-	bottom: 70px;
+	bottom: 80px;
 	right: 20px;
 	width: 360px;
 	height: 500px;
