@@ -85,7 +85,7 @@ h2 {
 					보내기</button>
 				<input type="text" name="code" class="form-control mb-2"
 					placeholder="이메일로 도착한 코드를 입력하세요" required>
-				<button type="button" class="btn btn-brown" id="certificate">인증</button>
+				<button type="button" class="btn btn-brown mb-3" id="certificate">인증</button>
 			</div>
 
 			<div class="mb-3">

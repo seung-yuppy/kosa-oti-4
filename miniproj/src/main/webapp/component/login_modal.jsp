@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
 	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 	<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
 <style>
 .modal-header {
@@ -46,22 +47,30 @@
 					<!-- Modal body -->
 					<div class="modal-body">
 						<div class="mb-3">
-							<label class="form-label">이메일</label> <input type="email"
-								name="username" class="form-control"
-								placeholder="사용자 이메일을 입력하세요" required>
+							<label class="form-label">이메일</label>
+							<div class="input-group">
+								<span class="input-group-text icon-input"> <img src="/path/to/icon.png" alt="아이콘" class="input-icon">
+									<!-- Bootstrap Icons 사용 -->
+								</span> <input type="email" name="username" class="form-control"
+									placeholder="사용자 이메일을 입력하세요" required>
+							</div>
 						</div>
 
 						<div class="mb-3">
-							<label class="form-label">비밀번호</label> <input type="password"
-								name="password" class="form-control" placeholder="비밀번호를 입력하세요"
-								required>
+							<label class="form-label">비밀번호</label>
+							<div class="input-group">
+								<span class="input-group-text"> <i class="bi bi-lock"></i>
+								</span> <input type="password" name="password" class="form-control"
+									placeholder="비밀번호를 입력하세요" required>
+							</div>
 						</div>
 					</div>
 
 					<!-- Modal footer -->
 					<div class="modal-footer">
-							<button type="submit" class="btn btn-brown" id="signUp">로그인</button>
-							<a href="/miniproj/page/user/forgotPassword.jsp" class="btn w-100">비밀번호를 잊어버렸나요?</a>
+						<button type="submit" class="btn btn-brown" id="signUp">로그인</button>
+						<a href="/miniproj/page/user/forgotPassword.jsp" class="btn w-100">비밀번호를
+							잊어버렸나요?</a>
 					</div>
 				</div>
 			</div>

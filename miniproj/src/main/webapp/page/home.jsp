@@ -16,10 +16,10 @@
 			<h2 class="fw-bold">당신의 완벽한 펫 동반자를 찾아보세요</h2>
 			<p class="text-muted">숨은 입양 가능 강아지와 고양이를 검색해 보세요. 모두가 행복한 연결을 위해 함께 합니다.</p>
 			<div class="mt-4 btn-container">
-				<a href="/miniproj/page/matching/matchQuiz.jsp" class="btn btn-secondary-brown">
+				<a href="/miniproj/page/matching/matchingQuiz.jsp" class="btn btn-secondary-brown">
 					운명의 동물 퀴즈
 				</a> 
-				<a href="/miniproj/page/matching/matchResult.jsp" class="btn btn-brown">
+				<a href="/miniproj/page/matching/matchingResult_after.jsp" class="btn btn-brown">
 					운명의 동물 보기
 				</a>
 			</div>

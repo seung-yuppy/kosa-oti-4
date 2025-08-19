@@ -208,7 +208,7 @@
       // 최종 결과 전송
       const form = document.createElement("form");
       form.method = "POST";
-      form.action = "/miniproj/page/matching/matchResult.jsp"; 
+      form.action = "/miniproj/page/matching/matchingResult.jsp"; 
 
       const input = document.createElement("input");
       input.type = "hidden";

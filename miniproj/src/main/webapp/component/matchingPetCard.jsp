@@ -6,6 +6,11 @@
 	<title>abandonedPetCard</title>
 	<link href="/miniproj/resource/css/common.css" rel="stylesheet">
 	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.col-lg-3 {
+			width: 100% !important;
+		}
+	</style>
 </head>
 <body>
 	<div class="col-lg-3">
