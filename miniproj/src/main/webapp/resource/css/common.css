@@ -58,8 +58,8 @@ p {
 .p-absolute {
 	z-index: 1000;
 	position: fixed;
-	top: 600px;
-	left: 1400px;
+	bottom: 10px;
+	right: 10px;
 }
 
 /* 헤더 컴포넌트 */
