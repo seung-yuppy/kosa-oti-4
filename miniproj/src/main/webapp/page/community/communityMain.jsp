@@ -167,7 +167,44 @@
 		</nav>
 	</div>
 
-	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+	<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 페이지 링크 요소들 가져오기
+    var pageLinks = document.querySelectorAll('.pagination.pagination-brown .page-item a.page-link');
+    
+    // 각 링크에 이벤트 리스너 추가
+    for(var i = 0; i < pageLinks.length; i++) {
+      pageLinks[i].addEventListener('click', function(e) {
+        // 기본 링크 동작 방지
+        e.preventDefault();
+        
+        // 현재 active 클래스 제거
+        var currentActive = document.querySelector('.pagination.pagination-brown .page-item.active');
+        if(currentActive) {
+          currentActive.classList.remove('active');
+        }
+        
+        // 클릭된 링크의 부모 요소에 active 클래스 추가
+        this.parentNode.classList.add('active');
+        
+        // 페이지 번호 가져오기
+        var pageNum = this.innerText;
+        if(pageNum.includes('Previous')) {
+          // 이전 페이지 처리
+          pageNum = '이전';
+        } else if(pageNum.includes('Next')) {
+          // 다음 페이지 처리
+          pageNum = '다음';
+        }
+        
+        console.log('페이지 ' + pageNum + '(으)로 이동');
+        
+        // 여기에 페이지 이동 로직 추가
+        // location.href = '현재페이지URL?page=' + pageNum;
+      });
+    }
+  });
+</script>
 	<!-- footer 영역 -->
 	<%@ include file="/component/footer.jsp"%>
 </body>
