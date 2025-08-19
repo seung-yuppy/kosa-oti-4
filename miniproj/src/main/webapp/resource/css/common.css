@@ -36,8 +36,30 @@ p {
 	gap: 20px;
 }
 
+.d-flex-space {
+	display: flex !important;
+	justify-content: space-between !important;
+	align-items: flex-start;
+}
+
+.card-like-btn {
+	background-color: transparent;
+	border: transparent;
+}
+
 .mt-10 {
 	margin-top: 120px;
+}
+
+.p-relative {
+	position: relative;
+}
+
+.p-absolute {
+	z-index: 1000;
+	position: fixed;
+	top: 600px;
+	left: 1400px;
 }
 
 /* 버튼 컴포넌트 */
@@ -152,6 +174,13 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.chat-btn {
+	width: 60px;
+	height: 60px;
+	box-shadow: -2px 2px 8px 4px gray;
+	border-radius: 50%;
 }
 
 /* (선택) 네비게이션 버튼 색상을 갈색 테마에 맞춤 */

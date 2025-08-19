@@ -45,7 +45,7 @@
 	<!-- 헤더 영역 -->
 	<%@ include file="/component/header.jsp" %>
 	<!-- 지도 영역 -->
-    <main class="container my-5">
+    <main class="container my-5 p-relative">
         <section class="search-card">
             <div class="card p-4 shadow-sm card-border">
                 <h3 class="text-center mb-4 fw-bold">내 주변 펫 찾기 🗺️</h3>
@@ -81,6 +81,9 @@
 			%>
             </div>
         </section>
+        <button type="button" class="card-like-btn p-absolute">
+        		<img src="/miniproj/image/ico_chat.png" class="chat-btn">
+        </button>
     </main>
 	<!-- 헤더 영역 -->
 	<%@ include file="/component/footer.jsp" %>
