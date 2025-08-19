@@ -28,6 +28,12 @@
 .modal-backdrop.show {
 	background-color: rgba(0, 0, 0, 0.2) !important; 
 }
+
+input.form-control {
+  height: 55px; 
+  font-size: 1rem; 
+}
+
 </style>
 
 </head>
@@ -41,27 +47,28 @@
 					<!-- Modal Header -->
 					<div class="modal-header">
 						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-						<h4 class="modal-title">로그인</h4>
+						<h2 class="modal-title fw-bold">로그인</h2>
+						<a class="btn w-100">운명의 발바닥에 오신 것을 환영합니다!</a>
 					</div>
 
 					<!-- Modal body -->
 					<div class="modal-body">
 						<div class="mb-3">
-							<label class="form-label">이메일</label>
 							<div class="input-group">
-								<span class="input-group-text icon-input"> <img src="/path/to/icon.png" alt="아이콘" class="input-icon">
+								<span class="input-group-text icon-input"> <img src="/miniproj/image/ico_userID.png" alt="아이콘" class="input-icon" width="16"
+							height="18">
 									<!-- Bootstrap Icons 사용 -->
 								</span> <input type="email" name="username" class="form-control"
-									placeholder="사용자 이메일을 입력하세요" required>
+									placeholder="사용자 이메일" required>
 							</div>
 						</div>
 
 						<div class="mb-3">
-							<label class="form-label">비밀번호</label>
 							<div class="input-group">
-								<span class="input-group-text"> <i class="bi bi-lock"></i>
+								<span class="input-group-text icon-input"> <img src="/miniproj/image/ico_password.png" alt="아이콘" class="input-icon" width="16"
+							height="18">
 								</span> <input type="password" name="password" class="form-control"
-									placeholder="비밀번호를 입력하세요" required>
+									placeholder="비밀번호" required>
 							</div>
 						</div>
 					</div>

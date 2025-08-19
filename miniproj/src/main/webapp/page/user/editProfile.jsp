@@ -53,7 +53,7 @@ body {
 	<%@ include file="../../component/header.jsp"%>
 	<form action="..." method="post">
 		<div class="d-grid form-container">
-			<h2 class="mb-4">회원정보 수정</h2>
+			<h2 class="mb-4 fw-bold">회원정보 수정</h2>
 			<div class="mb-3">
 				<label class="form-label">사용자 이메일</label> <input type="email"
 					name="username" class="form-control mb-2" value="<%= emailValue %>"

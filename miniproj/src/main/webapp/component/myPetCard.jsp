@@ -8,7 +8,7 @@
 	<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-		<div class="card pet-card shadow-sm">
+		<div class="card">
 			<img 
 				src="https://www.animal.go.kr/front/fileMng/imageView.do?f=/files/shelter/2025/08/202508181108334.jpg"
 				class="card-img-top card-image"

@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="col-lg-3">
-		<div class="card pet-card shadow-sm" >
+		<div class="card pet-card" >
 			<img 
 				src="https://www.animal.go.kr/front/fileMng/imageView.do?f=/files/shelter/2025/08/202508121308544.jpg"
 				class="card-img-top card-image"
@@ -28,7 +28,7 @@
 					<li class="card-item">
 						<img src="/miniproj/image/ico_gender.png" class="card-icon" />
 						<span>수컷</span>
-					</li>	
+					</li>
 					<li class="card-item">
 						<img src="/miniproj/image/ico_age.png" class="card-icon" />
 						<span>1세</span>

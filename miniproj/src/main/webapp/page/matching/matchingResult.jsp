@@ -37,12 +37,11 @@
 	}
 
 	.spinner-border {
-		width: 3rem;
-		height: 3rem;
-		color: #a75d00;
-		margin-bottom: 1rem;
+		width: 10rem !important;
+ 	   height: 10rem !important;
+ 	   color: #c68c53;
+  	  margin-bottom: 1rem;
 	}
-
 	.fade-out {
 		animation: fadeOut 1s forwards;
 	}
