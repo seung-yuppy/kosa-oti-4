@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../../component/login_modal.jsp" %>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-header">
 	<div class="container">
 		<img src="/miniproj/image/pawIcon.png" class="gnb-logo" alt="logo" /> 
 		<a class="nav-link gnb-title" href="/miniproj/page/home.jsp">운명의 발바닥</a>

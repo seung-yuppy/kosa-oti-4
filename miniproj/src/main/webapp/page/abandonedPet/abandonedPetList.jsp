@@ -13,8 +13,8 @@
 	<div class="container my-5">
 		<div class="row g-4">
 			<!-- 필터 선택 영역 -->
-			<aside class="col-lg-3">
-				<div class="filter-card p-3 shadow-sm card-border">
+			<aside class="col-lg-3 bg-filter">
+				<div class="filter-card p-3 card-border">
 					<h5 class="fw-bold mb-3 text-brown">필터</h5>
 					<form method="GET">
 						<div class="mb-3">

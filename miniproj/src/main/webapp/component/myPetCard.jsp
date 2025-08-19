@@ -14,7 +14,7 @@
 				class="card-img-top card-image"
 				alt="크림과 츄세이" 
 			>
-			<div class="card-body card-border">
+			<div class="card-body">
 				<h5 class="card-title fw-bold margin-t">초코</h5>
 				<p class="card-text text-muted text-small">
 					장난기 많고 사람을 좋아하는 골든 리트리버 보리입니다. 산책과 공놀이를 정말 좋아해요.
@@ -46,7 +46,7 @@
 					</li>	
 
 				</ul>
-				<a href="#" class="btn btn-brown d-block">산책 게시판 등록하기</a>
+				<a href="#" class="btn btn-gray d-block">산책 게시판 등록하기</a>
 			</div>
 		</div>
 	<!-- script 영역 -->

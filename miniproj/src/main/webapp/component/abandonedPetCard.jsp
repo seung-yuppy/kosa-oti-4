@@ -15,7 +15,7 @@
 				class="card-img-top card-image"
 				alt="크림과 츄세이" 
 			>
-			<div class="card-body card-border">
+			<div class="card-body">
 				<div class="d-flex-space">
 					<h5 class="card-title fw-bold">믹스견</h5>
 					<button type="button" class="card-like-btn"><img src="/miniproj/image/ico_mbti.png" class="card-icon" ></button>
@@ -39,7 +39,7 @@
 					</li>	
 
 				</ul>
-				<a href="/miniproj/page/abandonedPet/abandonedPetDetail.jsp" class="btn btn-brown d-block">자세히 보기</a>
+				<a href="/miniproj/page/abandonedPet/abandonedPetDetail.jsp" class="btn btn-gray d-block">자세히 보기</a>
 			</div>
 		</div>
 	</div>
