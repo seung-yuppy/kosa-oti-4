@@ -49,7 +49,7 @@
 						class="card-img-top community-image"
 						alt="반려동물 봉사활동"
 					/>
-					<div class="card-body">
+					<div class="card-body community-card">
 						<h5 class="card-title">반려동물 키우는 팁</h5>
 						<p class="card-text text-muted">반려동물 키우는 팁을 공유해요~</p>
 						<a href="#" class="btn btn-brown d-block">
@@ -65,7 +65,7 @@
 						class="card-img-top community-image" 
 						alt="반려동물 건강 상담"
 					/>
-					<div class="card-body">
+					<div class="card-body community-card">
 						<h5 class="card-title">내 반려동물 자랑</h5>
 						<p class="card-text text-muted">예쁘고 귀여운 내 반려동물을 공유해요~</p>
 						<a href="#" class="btn btn-brown d-block">
@@ -81,7 +81,7 @@
 						class="card-img-top community-image" 
 						alt="산책 메이트"
 					/>
-					<div class="card-body">
+					<div class="card-body community-card">
 						<h5 class="card-title">실종 반려동물 찾아주세요</h5>
 						<p class="card-text text-muted">내 반려동물 좀 찾아주세요...</p>
 						<a href="#" class="btn btn-brown d-block">

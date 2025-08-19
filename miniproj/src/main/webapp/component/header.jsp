@@ -9,7 +9,7 @@
 		</button>
 		
 		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav ms-auto">
+			<ul class="navbar-nav ms-auto header-list">
 				<li class="nav-item">
 					<a class="nav-link gnb-item" href="/miniproj/page/abandonedPet/abandonedPetList.jsp">
 						인간과 펫
@@ -26,7 +26,7 @@
 					</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav ms-auto">
+			<ul class="navbar-nav ms-auto header-list">
 				<li class="nav-item">
 					<a class="nav-link btn btn-brown" href="/miniproj/page/user/myPage.jsp">
 						마이페이지

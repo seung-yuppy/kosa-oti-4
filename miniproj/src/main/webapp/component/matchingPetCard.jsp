@@ -23,7 +23,7 @@
 			<div class="card-body card-border">
 				<div class="d-flex-space">
 					<h5 class="card-title fw-bold">믹스견</h5>
-					<button type="button" class="card-like-btn"><img src="/miniproj/image/ico_mbti.png" class="card-icon" ></button>
+					<button type="button" class="card-like-btn"><img src="/miniproj/image/ico_fullheart.png" class="card-icon" ></button>
 				</div>
 				<p class="card-text text-muted text-small" id="card-description">
 					이 강아지는 첫 만남에는 조금 낯을 가리지만, 마음을 열면 세상에서 가장 든든한 동반자가 됩니다. 당신의 세심함과 이 아이의 순수함이 만나면 평생의 인연이 될 거예요.
