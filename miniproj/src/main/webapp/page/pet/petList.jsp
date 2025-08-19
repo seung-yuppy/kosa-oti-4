@@ -21,6 +21,24 @@
 	        	width: 100%;
 	        	height: 410px;
         }
+        .swiper-button-next {
+            background: url(/miniproj/image/ico_next.png) no-repeat;
+        		background-size: 50% auto;
+   			background-position: center;
+
+			&::after {
+				display:none;
+			}
+        }
+        .swiper-button-prev {
+        		background: url(/miniproj/image/ico_prev.png) no-repeat;
+        		background-size: 50% auto;
+   			background-position: center;
+
+			&::after {
+				display:none;
+			}
+        }
     </style>
 </head>
 <body>
