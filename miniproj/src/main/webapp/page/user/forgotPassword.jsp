@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ include file="../../component/changePassword_modal.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,7 @@
 <link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
 <style>
 .form-container {
-	max-width: 550px;
+	width: 450px;
 	margin: 50px auto;
 	background-color: #fff9f5;
 	padding: 30px;
@@ -24,7 +25,7 @@
 <body>
 	<%@ include file="../../component/header.jsp"%>
 	<div class="form-container">
-		<h2 class="mb-4">비밀번호를 잃어버렸나요?</h2>
+		<h2 class="mb-4">비밀번호 찾기</h2>
 		<div class="d-grid ">
 			<label class="form-label">사용자 이메일</label> <input type="email"
 				name="username" class="form-control mb-2"
@@ -39,7 +40,7 @@
 			
 			<div class="mb-3 text-center">
 				<button type="button" class="btn btn-brown" data-bs-toggle="modal"
-					data-bs-target="#editProfileModal">비밀번호 바꾸기</button>
+					data-bs-target="#changePasswordModal">비밀번호 바꾸기</button>
 			</div>
 
 		</div>

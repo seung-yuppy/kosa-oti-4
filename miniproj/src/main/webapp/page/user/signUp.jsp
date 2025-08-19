@@ -23,6 +23,7 @@ body {
 	border-radius: 12px;
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
+
 .form-label, .form-check-label {
 	color: #a75d00;
 }
@@ -72,23 +73,30 @@ h2 {
 	<%@ include file="../../component/header.jsp"%>
 	<div class="form-container">
 		<h2>회원가입</h2>
-		<form action="signupProcess.jsp" method="post">
+		<form action="signupProcess.jsp" method="post" onsubmit="return validatePasswords()">
 
 			<div class="d-grid">
 				<label class="form-label">사용자 이메일</label> <input type="email"
-					name="username" class="form-control mb-2" placeholder="사용자 이메일을 입력하세요"
-					required>
-					<button type="button" class="btn btn-brown mb-2" id="certificate_mail" data-bs-toggle="popover" 
-					title="인증메일 전송완료" data-bs-content="메일함을 확인해주세요! 도착하지 않았다면 주소를 다시 한번 확인해 주세요.">인증메일 보내기</button>
+					name="username" class="form-control mb-2"
+					placeholder="사용자 이메일을 입력하세요" required>
+				<button type="button" class="btn btn-brown mb-2"
+					id="certificate_mail" data-bs-toggle="popover" title="인증메일 전송완료"
+					data-bs-content="메일함을 확인해주세요! 도착하지 않았다면 주소를 다시 한번 확인해 주세요.">인증메일
+					보내기</button>
 				<input type="text" name="code" class="form-control mb-2"
 					placeholder="이메일로 도착한 코드를 입력하세요" required>
-					<button type="button" class="btn btn-brown" id="certificate">인증</button>
+				<button type="button" class="btn btn-brown" id="certificate">인증</button>
 			</div>
 
 			<div class="mb-3">
-				<label class="form-label">비밀번호</label> <input type="password"
+				<label class="form-label">비밀번호</label> <input type="password" id="newPassword"
 					name="password" class="form-control" placeholder="비밀번호를 입력하세요"
 					required>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">비밀번호 확인</label> <input type="password" id="confirmPassword"
+					name="password" class="form-control" 
+					placeholder="비밀번호를 다시 한번 입력하세요" required>
 			</div>
 
 			<div class="mb-3">
@@ -202,11 +210,25 @@ h2 {
         element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
     }
     
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-      return new bootstrap.Popover(popoverTriggerEl)
-    })
-</script>
+
+		var popoverTriggerList = [].slice.call(document
+				.querySelectorAll('[data-bs-toggle="popover"]'))
+		var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+			return new bootstrap.Popover(popoverTriggerEl)
+		})
+
+		//비밀번호 불일치시 alert
+		function validatePasswords() {
+			const pw1 = document.getElementById("newPassword").value;
+			const pw2 = document.getElementById("confirmPassword").value;
+
+			if (pw1 !== pw2) {
+				alert("비밀번호가 일치하지 않습니다.");
+				return false; // 제출 막기
+			}
+			return true; // 통과
+		}
+	</script>
 	<script src="/miniproj/resource/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

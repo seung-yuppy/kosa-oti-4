@@ -1,8 +1,9 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@ page import="java.util.List, java.util.ArrayList" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java"%>
+<%@ page import="java.util.List, java.util.ArrayList"%>
+<%@ include file="../../component/passwordConfirm_modal.jsp" %>
 <%
     // 예시용 하드코딩 데이터
-    String name = "김민준";
+    String email = "min44@naver.com";
     String address = "서울특별시 강남구 테헤란로 123";
     String nickname = "민민";
     boolean hasPet = true;
@@ -29,33 +30,27 @@
     animals.add(new Animal("초코", "말티즈", "http://openapi.animal.go.kr/openapi/service/rest/fileDownloadSrvc/files/shelter/2025/08/202508130808662.jpg"));
     animals.add(new Animal("콩이", "진돗개", "http://openapi.animal.go.kr/openapi/service/rest/fileDownloadSrvc/files/shelter/2025/08/202508131108540.jpg"));
 
-    request.setAttribute("name", name);
+    request.setAttribute("email", email);
     request.setAttribute("nickname", nickname);
 %>
-<%@ include file="../../component/editProfile_modal.jsp" %>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <title>마이페이지</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<link href="/miniproj/resource/css/common.css" rel="stylesheet">
-<link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
 <style>
 body {
 	font-family: 'Pretendard', sans-serif;
 	background-color: #f9f9f9;
 }
 
-.section {
-	margin-bottom: 50px;
-}
+.pet-card {
+	height: 300px !important;
+} 
 
-.card img {
-	border-radius: 10px;
+.card-body {
+	background-color: #fdfaf6;
 }
 
 .nav-tabs .nav-link.active {
@@ -84,18 +79,27 @@ body {
 }
 
 .search-card {
-	max-width: 1320px;
+	width: 1020px;
 	margin: 0 auto;
 	height: 410px;
 }
 
-.swiper-slide {
-	width: auto; /* 혹은 고정 px */
-	min-width: 280px; /* 카드가 충분히 보이도록 */
-	box-sizing: border-box;
-	padding: 10px;
+.swiper-button-next {
+	background: url(/miniproj/image/ico_next.png) no-repeat;
+	background-size: 50% auto;
+	background-position: center;
+	&::after{
+		display:none;
 }
 
+}
+.swiper-button-prev {
+	background: url(/miniproj/image/ico_prev.png) no-repeat;
+	background-size: 50% auto;
+	background-position: center;
+	&::after{
+		display: none;
+}
 </style>
 <!-- Bootstrap 5 -->
 <link
@@ -119,9 +123,9 @@ body {
 				<h3>프로필 정보</h3>
 				<hr>
 				<div class="mb-3">
-					<label class="form-label">이름</label>
+					<label class="form-label">이메일 주소</label>
 					<div class="card">
-						<div class="card-body"><%= name %></div>
+						<div class="card-body"><%= email %></div>
 					</div>
 				</div>
 
@@ -148,10 +152,12 @@ body {
 
 				<!-- 수정 버튼 -->
 				<button type="button" class="btn btn-brown" data-bs-toggle="modal"
-					data-bs-target="#editProfileModal">프로필 수정</button>
+					data-bs-target="#passwordComfirmModal">프로필 수정</button>
 			</div>
-			<div class="flex-item-right d-grid">
-				<div class="swiper swiper-container" style="width: 100%; height: 550px;">
+			<!-- 오른쪽화면(펫 프로필 확인) -->
+			<div class="flex-item-right d-grid" style="margin-top: -60px;">
+				<div class="swiper swiper-container"
+					style="width: 100%; height: 550px;">
 					<div class="swiper-wrapper">
 						<% for (int i = 0; i < 3; i++) { %>
 						<div class="swiper-slide">
@@ -165,13 +171,14 @@ body {
 					<div class="swiper-button-prev"></div>
 				</div>
 				<div class="mb-3">
-					<a type="button" class="btn btn-brown" 
-						href="/miniproj/page/pet/petSignUp.jsp">내 강아지 등록하기</a>
+					<a type="button" class="btn btn-brown"
+						href="/miniproj/page/pet/petSignUp.jsp">내 반려동물 등록하기</a>
 				</div>
 
 				<!-- swiper js -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script>
+				<script
+					src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+				<script>
     const swiper = new Swiper(".swiper-container", {
       navigation: {
         nextEl: ".swiper-button-next",
@@ -186,13 +193,13 @@ body {
 
 	</div>
 
-	<!-- 관심 입양 동물 -->
+	<!-- 관심 유기 동물 -->
 	<div class="container my-5 section">
-		<h3>내가 관심 있는 입양 동물</h3>
+		<h3>내가 관심 있는 유기동물</h3>
 		<div class="row row-cols-1 row-cols-md-4 g-4 mt-3" id="animal-list">
 			<% for (int i = 0; i < animals.size(); i++) {
         Animal a = animals.get(i);
-        boolean isHidden = i >= 4; // 5번째부터 숨김
+        boolean isHidden = i >= 4; 
     %>
 			<div class="col animal-card <%= isHidden ? "more-card" : "" %>"
 				style="<%= isHidden ? "display: none;" : "" %>">
@@ -228,52 +235,77 @@ body {
 
 	<!-- 커뮤니티 활동 (탭 전환) -->
 	<div class="container my-5 section">
-			<h3 class="mb-3">내 커뮤니티 활동</h3>
+		<h3 class="mb-3">내 커뮤니티 활동</h3>
 
-			<!-- 탭 버튼 -->
-			<ul class="nav nav-tabs" id="activityTabs">
-				<li class="nav-item">
-					<button class="nav-link active" id="posts-tab" data-bs-toggle="tab"
-						data-bs-target="#posts" type="button" role="tab">게시글</button>
-				</li>
-				<li class="nav-item">
-					<button class="nav-link" id="comments-tab" data-bs-toggle="tab"
-						data-bs-target="#comments" type="button" role="tab">댓글</button>
-				</li>
-			</ul>
+		<!-- 탭 버튼 -->
+		<ul class="nav nav-tabs" id="activityTabs">
+			<li class="nav-item">
+				<button class="nav-link active" id="posts-tab" data-bs-toggle="tab"
+					data-bs-target="#posts" type="button" role="tab">게시글</button>
+			</li>
+			<li class="nav-item">
+				<button class="nav-link" id="comments-tab" data-bs-toggle="tab"
+					data-bs-target="#comments" type="button" role="tab">댓글</button>
+			</li>
+		</ul>
 
-			<!-- 탭 콘텐츠 -->
-			<div class="tab-content border border-top-0 p-3"
-				id="activityTabsContent">
-				<!-- 게시글 -->
-				<div class="tab-pane fade show active" id="posts" role="tabpanel">
-					<div class="mb-3">
-						<strong>이서연</strong> <small class="text-muted">· 2시간 전</small>
-						<p>새로운 입양 가이드라인에 대한 의견을 나누고 싶습니다. 최근 변경된 부분이 있는데, 공유해주신 분
-							계신가요?</p>
-						<span>👁️‍🗨️ 15 | 💬 3</span>
+		<!-- 탭 콘텐츠 -->
+		<div class="tab-content border border-top-0 p-3"
+			id="activityTabsContent">
+			<!-- 게시글 -->
+			<div class="tab-pane fade show active" id="posts" role="tabpanel">
+				<div class="mb-3">
+					<strong>이서연</strong> <small class="text-muted">· 2시간 전</small>
+					<p>새로운 입양 가이드라인에 대한 의견을 나누고 싶습니다. 최근 변경된 부분이 있는데, 공유해주신 분 계신가요?</p>
+					<div class="d-flex align-items-center gap-3 mt-2">
+						<div class="d-flex align-items-center gap-1">
+							<img src="/miniproj/image/ico_like.png" alt="좋아요" width="18"
+								height="18"> <span>1,234</span>
+						</div>
+						<div class="d-flex align-items-center gap-1">
+							<img src="/miniproj/image/ico_comment.png" alt="댓글" width="18"
+								height="18"> <span>45</span>
+						</div>
+						<div class="d-flex align-items-center gap-1">
+							<img src="/miniproj/image/ico_watch.png" alt="조회수" width="18"
+								height="18"> <span>210</span>
+						</div>
 					</div>
-					<div class="mb-3">
-						<strong>박지훈</strong> <small class="text-muted">· 1분 전</small>
-						<p>저희 집 고양이 뿌잉이가 새로운 장난감을 너무 좋아하네요! 고양이 장난감 추천 좀 해주세요.</p>
-						<span>👁️‍🗨️ 28 | 💬 7</span>
+
+				</div>
+				<div class="mb-3">
+					<strong>박지훈</strong> <small class="text-muted">· 1분 전</small>
+					<p>저희 집 고양이 뿌잉이가 새로운 장난감을 너무 좋아하네요! 고양이 장난감 추천 좀 해주세요.</p>
+					<div class="d-flex align-items-center gap-3 mt-2">
+						<div class="d-flex align-items-center gap-1">
+							<img src="/miniproj/image/ico_like.png" alt="좋아요" width="18"
+								height="18"> <span>1,234</span>
+						</div>
+						<div class="d-flex align-items-center gap-1">
+							<img src="/miniproj/image/ico_comment.png" alt="댓글" width="18"
+								height="18"> <span>45</span>
+						</div>
+						<div class="d-flex align-items-center gap-1">
+							<img src="/miniproj/image/ico_watch.png" alt="조회수" width="18"
+								height="18"> <span>210</span>
+						</div>
 					</div>
 				</div>
+			</div>
 
-				<!-- 댓글 -->
-				<div class="tab-pane fade" id="comments" role="tabpanel">
-					<div class="mb-3">
-						<strong>김민준</strong> <small class="text-muted">· 30분 전</small>
-						<p>
-							<em>이서연</em>님의 글에 댓글: 저도 같은 의견입니다. 새로운 기준 좋네요.
-						</p>
-					</div>
-					<div class="mb-3">
-						<strong>김민준</strong> <small class="text-muted">· 1일 전</small>
-						<p>
-							<em>정하윤</em>님의 글에 댓글: 다음 봉사활동도 같이 가요!
-						</p>
-					</div>
+			<!-- 댓글 -->
+			<div class="tab-pane fade" id="comments" role="tabpanel">
+				<div class="mb-3">
+					<strong>김민준</strong> <small class="text-muted">· 30분 전</small>
+					<p>
+						<em>이서연</em>님의 글에 댓글: 저도 같은 의견입니다. 새로운 기준 좋네요.
+					</p>
+				</div>
+				<div class="mb-3">
+					<strong>김민준</strong> <small class="text-muted">· 1일 전</small>
+					<p>
+						<em>정하윤</em>님의 글에 댓글: 다음 봉사활동도 같이 가요!
+					</p>
 				</div>
 			</div>
 		</div>
