@@ -94,9 +94,8 @@ body {
 				%>
 			</div>
 		</section>
-		<button type="button" class="card-like-btn p-absolute"
-			id="chatToggleBtn">
-			<img src="/miniproj/image/ico_chat.png" class="chat-btn">
+		<button type="button" class="card-like-btn p-absolute" id="chatToggleBtn">
+			<img src="/miniproj/image/ico_chatting.png" class="chat-btn">
 		</button>
 
 		<!-- 채팅 리스트 -->
@@ -204,68 +203,67 @@ body {
 	<script>
 		/* 스와이퍼 */
 		const swiper = new Swiper('.swiper-container', {
-			// 옵션
-			loop : true, // 무한 루프
-
-			// 네비게이션 버튼
-			navigation : {
-				nextEl : '.swiper-button-next',
-				prevEl : '.swiper-button-prev',
-			},
+		    // 옵션
+		    loop: true, // 무한 루프
+	
+		    // 네비게이션 버튼
+		    navigation: {
+		        nextEl: '.swiper-button-next',
+		        prevEl: '.swiper-button-prev',
+		    },
 		});
-
+	
 		/* 카카오 맵 */
 		var mapContainer = document.getElementById('map'); // 지도를 표시할 div
 		var defaultPosition = new kakao.maps.LatLng(37.566826, 126.9786567); // 기본 위치 (서울시청)
-
+	
 		var mapOption = {
-			center : defaultPosition, // 지도의 기본 중심좌표
-			level : 3
+		    center: defaultPosition, // 지도의 기본 중심좌표
+		    level: 3,
 		};
-
+	
 		// 지도를 생성합니다
 		var map = new kakao.maps.Map(mapContainer, mapOption);
-
+	
 		// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
 		if (navigator.geolocation) {
-
-			// GeoLocation을 이용해서 접속 위치를 얻어옵니다
-			navigator.geolocation.getCurrentPosition(function(position) {
-
-				var lat = position.coords.latitude, // 위도
-				lon = position.coords.longitude; // 경도
-
-				var locPosition = new kakao.maps.LatLng(lat, lon); // 현재 위치를 기반으로 LatLng 객체 생성
-
-				// 지도 중심을 현재 위치로 이동시킵니다
-				map.setCenter(locPosition);
-
-				// 현재 위치에 마커를 생성합니다
-				var marker = new kakao.maps.Marker({
-					map : map,
-					position : locPosition
-				});
-
-			}, function(error) {
-				// 위치 정보 얻기를 실패했을 때 처리 (사용자가 거부 등)
-				console.error("Geolocation error: ", error);
-				// 실패 시 기본 위치에 마커를 표시합니다.
-				var marker = new kakao.maps.Marker({
-					map : map,
-					position : defaultPosition
-				});
-			});
-
+		    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+		    navigator.geolocation.getCurrentPosition(
+		        function (position) {
+		            var lat = position.coords.latitude; // 위도
+		            var lon = position.coords.longitude; // 경도
+	
+		            var locPosition = new kakao.maps.LatLng(lat, lon); // 현재 위치 LatLng 객체 생성
+	
+		            // 지도 중심을 현재 위치로 이동
+		            map.setCenter(locPosition);
+	
+		            // 현재 위치에 마커 생성
+		            var marker = new kakao.maps.Marker({
+		                map: map,
+		                position: locPosition,
+		            });
+		        },
+		        function (error) {
+		            // 위치 정보 얻기 실패 처리 (사용자가 거부 등)
+		            console.error("Geolocation error: ", error);
+		            // 실패 시 기본 위치에 마커 표시
+		            var marker = new kakao.maps.Marker({
+		                map: map,
+		                position: defaultPosition,
+		            });
+		        }
+		    );
 		} else {
-			// HTML5의 GeoLocation을 사용할 수 없을 때 fallback 처리
-			console.log("geolocation을 사용할 수 없어요..")
-			// 기본 위치에 마커를 표시합니다.
-			var marker = new kakao.maps.Marker({
-				map : map,
-				position : defaultPosition
-			});
+		    // HTML5의 GeoLocation 사용 불가 시 fallback 처리
+		    console.log("geolocation을 사용할 수 없어요..");
+		    // 기본 위치에 마커 표시
+		    var marker = new kakao.maps.Marker({
+		        map: map,
+		        position: defaultPosition,
+		    });
 		}
-
+	
 		/* 채팅 스크립트 */
 		const chatBtn = document.getElementById("chatToggleBtn");
 		const chatList = document.getElementById("chatList");
@@ -273,39 +271,58 @@ body {
 		const chatDetailEl = document.getElementById("chatDetail");
 		const chatDetailCloseBtn = document.getElementById("chatDetailCloseBtn");
 		const chatRoomTitle = document.getElementById("chatRoomTitle");
-
+	
 		const show = (el, v) => (el.style.display = v);
 		const isShown = (el) => window.getComputedStyle(el).display !== "none";
-
-		function openList()   { show(chatList, "block"); show(chatDetailEl, "none"); }
-		function openDetail() { show(chatDetailEl, "flex"); show(chatList, "none"); }
-		function closeAll()   { show(chatList, "none"); show(chatDetailEl, "none"); }
-
+	
+		function openList() {
+		    show(chatList, "block");
+		    show(chatDetailEl, "none");
+		}
+		function openDetail() {
+		    show(chatDetailEl, "flex");
+		    show(chatList, "none");
+		}
+		function closeAll() {
+		    show(chatList, "none");
+		    show(chatDetailEl, "none");
+		}
+	
 		// chat 버튼: 상세 열려있으면 리스트로, 아니면 토글
 		chatBtn.addEventListener("click", () => {
-  		if (isShown(chatDetailEl)) openList();
-  		else isShown(chatList) ? closeAll() : openList();
+		    if (isShown(chatDetailEl)) openList();
+		    else isShown(chatList) ? closeAll() : openList();
 		});
-
-		// 리스트 X
+	
+		// 리스트 X 버튼
 		chatCloseBtn.addEventListener("click", closeAll);
-
-		// 상세 X
+	
+		// 상세 X 버튼
 		chatDetailCloseBtn.addEventListener("click", closeAll);
-		
+	
 		const chatBackBtn = document.getElementById("chatBackBtn");
 		chatBackBtn.addEventListener("click", openList); // 상세 닫고 리스트 열기
-
-		// 리스트 항목 클릭 → 바로 상세 열기 (보리만 연결 예시)
+	
+		// 리스트 항목 클릭 → 상세 열기 (보리만 연결 예시)
 		document.querySelectorAll(".chat-item").forEach((item) => {
-  		item.addEventListener("click", () => {
-    	const nameText = item.querySelector(".chat-name")?.textContent || "";
-    	if (nameText.includes("보리")) {
-      	if (chatRoomTitle) chatRoomTitle.textContent = "보리 (Bori)"; // 선택
-      	openDetail(); // ✅ 리스트 닫고 상세 즉시 열림
-    	}
-  		});
-		}); 
+		    item.addEventListener("click", () => {
+		        const nameText = item.querySelector(".chat-name")?.textContent || "";
+		        if (nameText.includes("보리")) {
+		            if (chatRoomTitle) chatRoomTitle.textContent = "보리 (Bori)";
+		            openDetail(); // 리스트 닫고 상세 열기
+		        }
+		    });
+		});
+	
+		document.querySelectorAll(".card-body").forEach((item) => {
+		    item.addEventListener("click", () => {
+		        const nameText = item.querySelector(".chat-name")?.textContent || "";
+		        if (nameText.includes("초코")) {
+		            if (chatRoomTitle) chatRoomTitle.textContent = "보리 (Bori)";
+		            openDetail();
+		        }
+		    });
+		});
 	</script>
 </body>
 </html>

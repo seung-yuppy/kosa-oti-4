@@ -28,7 +28,7 @@ p {
 }
 /* 디스플레이 */
 .d-block {
-	display: block;
+	display: block !important;
 }
 
 .d-flex {
@@ -60,6 +60,16 @@ p {
 	position: fixed;
 	bottom: 10px;
 	right: 10px;
+	border-radius: 50%;
+	box-shadow: -2px 2px 8px 4px gray;
+	background-color: #a75d00;
+	width: 60px;
+	height: 60px;
+	transition: background-color 0.3s;
+	
+	&:hover {
+		background-color: #cc7000; 
+	}
 }
 
 /* 헤더 컴포넌트 */
@@ -209,10 +219,8 @@ p {
 }
 
 .chat-btn {
-	width: 60px;
-	height: 60px;
-	box-shadow: -2px 2px 8px 4px gray;
-	border-radius: 50%;
+	width: 30px;
+	height: 30px;
 }
 
 /* (선택) 네비게이션 버튼 색상을 갈색 테마에 맞춤 */

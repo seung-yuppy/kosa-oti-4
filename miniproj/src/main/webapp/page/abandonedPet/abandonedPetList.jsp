@@ -18,7 +18,7 @@
 					<h5 class="fw-bold mb-3 text-brown">필터</h5>
 					<form method="GET">
 						<div class="mb-3">
-							<label for="animalType text-brown">동물 종류</label> 
+							<label for="animalType" class="form-label text-brown">동물 종류</label> 
 							<select class="form-control" name="animalType">
 								<option value="all" selected>전체</option>
 								<option value="dog">강아지</option>
