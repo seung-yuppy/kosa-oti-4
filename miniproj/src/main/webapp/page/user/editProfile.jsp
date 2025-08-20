@@ -54,22 +54,7 @@ body {
 	<form action="..." method="post">
 		<div class="d-grid form-container">
 			<h2 class="mb-4 fw-bold">회원정보 수정</h2>
-			<div class="mb-3">
-				<label class="form-label">사용자 이메일</label> <input type="email"
-					name="username" class="form-control mb-2" value="<%= emailValue %>"
-					placeholder="사용자 이메일을 입력하세요" required>
-				<div class="d-grid">
-					<button type="button" class="btn btn-brown mb-2"
-						id="certificate_mail" data-bs-toggle="popover" title="인증메일 전송완료"
-						data-bs-content="메일함을 확인해주세요! 도착하지 않았다면 주소를 다시 한번 확인해 주세요.">
-						인증메일 보내기</button>
-				</div>
-				<input type="text" name="code" class="form-control mb-2"
-					placeholder="이메일로 도착한 코드를 입력하세요" required>
-				<div class="d-grid">
-					<button type="button" class="btn btn-brown" id="certificate">인증</button>
-				</div>
-			</div>
+
 
 			<div class="mb-3">
 				<label class="form-label">비밀번호</label> <input type="password"
