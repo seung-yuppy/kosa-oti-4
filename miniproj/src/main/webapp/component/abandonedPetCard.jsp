@@ -22,8 +22,8 @@
 				</div>
 				<ul class="card-list">
 					<li class="card-item">
-						<img src="/miniproj/image/ico_mbti.png" class="card-icon" />
-						<span>ISTP</span>
+						<img src="/miniproj/image/ico_size.png" class="card-icon" />
+						<span>중형</span>
 					</li>	
 					<li class="card-item">
 						<img src="/miniproj/image/ico_gender.png" class="card-icon" />

@@ -91,19 +91,26 @@
 						<div
 							class="d-flex justify-content-around text-center py-3 my-4 bg-light rounded profile-icon-group">
 							<div class="icon-item">
-								<img src="/miniproj/image/ico_age.png" class="card-icon" /> <span>1세</span>
+								<div class="icon-container">
+									<img src="/miniproj/image/ico_age.png" class="card-icon" /> 
+									<span class="icon-caption">나이 : </span>
+									<span>1세</span>
+								</div>
 							</div>
 							<div class="icon-item">
-								<img src="/miniproj/image/ico_individual.png" class="card-icon" /> <span>강아지</span>
+								<div class="icon-container">
+									<img src="/miniproj/image/ico_gender.png" class="card-icon" /> 
+									<span class="icon-caption">성별 : </span>
+									<span>수컷</span>
+								</div>								
 							</div>
 							<div class="icon-item">
-								<img src="/miniproj/image/ico_mbti.png" class="card-icon" /> <span>ISTP</span>
-							</div>
-							<div class="icon-item">
-								<img src="/miniproj/image/ico_gender.png" class="card-icon" /> <span>수컷</span>
-							</div>
-							<div class="icon-item">
-								<img src="/miniproj/image/ico_size.png" class="card-icon" /> <span>중형</span>
+								<div class="icon-container">
+									<img src="/miniproj/image/ico_size.png" class="card-icon" /> 
+									<span class="icon-caption">몸무게 : </span>
+									<span>4.9kg</span>
+								</div>								
+
 							</div>
 						</div>
 
