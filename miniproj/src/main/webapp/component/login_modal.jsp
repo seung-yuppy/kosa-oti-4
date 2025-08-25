@@ -19,21 +19,6 @@
 .modal-body {
 	color: #a75d00;
 }
-
-.modal-footer {
-	display: flex !important;
-	flex-direction: column;
-}
-
-.modal-backdrop.show {
-	background-color: rgba(0, 0, 0, 0.2) !important; 
-}
-
-input.form-control {
-  height: 55px; 
-  font-size: 1rem; 
-}
-
 </style>
 
 </head>

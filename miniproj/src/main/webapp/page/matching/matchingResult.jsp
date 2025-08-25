@@ -8,6 +8,9 @@
 <link href="/miniproj/resource/css/common.css" rel="stylesheet">
 <link href="/miniproj/resource/css/bootstrap.min.css" rel="stylesheet">
 <style>
+
+	
+
 	@keyframes heartbeat {
     	0%, 100% {
     		transform: scale(1);

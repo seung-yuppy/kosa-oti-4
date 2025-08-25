@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="../../component/deleteAccount_modal.jsp" %>
 <%
 	String emailValue = (String) request.getAttribute("email");
 	if (emailValue == null) {
@@ -103,7 +104,11 @@ body {
 			</div>
 		</div>
 	</form>
-
+	<div class="text-center mt-4">
+		<a href="javascript:void(0);" id="deleteAccountLink"
+			style="color: #a75d00; text-decoration: underline; cursor: pointer;">
+			회원탈퇴하기 </a>
+	</div>
 	<!-- 다음 주소 API 관련 요소 -->
 	<div id="layer">
 		<img src="//t1.daumcdn.net/postcode/resource/images/close.png"
@@ -186,6 +191,11 @@ body {
 				.querySelectorAll('[data-bs-toggle="popover"]'))
 		var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
 			return new bootstrap.Popover(popoverTriggerEl)
+		});
+		
+		document.getElementById("deleteAccountLink").addEventListener("click", function() {
+		    var deleteModal = new bootstrap.Modal(document.getElementById('deleteAccountModal'));
+		    deleteModal.show();
 		});
 	</script>
 	<%@ include file="../../component/footer.jsp"%>
